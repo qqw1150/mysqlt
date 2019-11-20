@@ -4,29 +4,8 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="./plugs/layui/css/layui.css"/>
-
+    <link rel="stylesheet" type="text/css" href="./css/base.css"/>
     <style>
-        body{
-            font-size: 14px;
-            color: #444;
-            background-color: #87968b;
-        }
-        h1,h2,h3,h4,h5,h6{
-            color: #222;
-            font-family: "Open Sans",sans-serif;
-            font-weight: 400;
-            line-height: 1.2;
-            margin: 0;
-            margin-bottom: 10px;
-            padding: 0;
-        }
-        a{
-            text-decoration: none;
-            color: #007DDB;
-        }
-        p{
-            margin: 8px 0;
-        }
         .top{
             height: 80px;
         }
@@ -301,30 +280,94 @@
 
                 <h2>MySQL参考资料</h2>
                 <p>如果您需要更多关于MySQL的信息，请查看<a href="#">MySQL参考资料。</a></p>
+
+
+
+
+
             </article>
         </div>
         <div class="layui-col-md3 right">
-            <ul class="layui-nav layui-nav-tree layui-bg-gray" lay-filter="test">
-                <!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
-                <li class="layui-nav-item layui-nav-itemed">
-                    <a href="javascript:;">默认展开</a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">选项1</a></dd>
-                        <dd><a href="javascript:;">选项2</a></dd>
-                        <dd><a href="">跳转</a></dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item">
-                    <a href="javascript:;">解决方案</a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="">移动模块</a></dd>
-                        <dd><a href="">后台模版</a></dd>
-                        <dd><a href="">电商平台</a></dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item"><a href="">产品</a></li>
-                <li class="layui-nav-item"><a href="">大数据</a></li>
-            </ul>
+            <div class="layui-card">
+                <div class="layui-card-header">MYSQL快速启动</div>
+                <div class="layui-card-body">
+                    <a href="#"><div>MySQL是什么?</div></a>
+                    <a href="#"><div>安装MySQL数据库服务器</div></a>
+                    <a href="#"><div>连接到MySQL服务器</div></a>
+                    <a href="#"><div>下载MySQL样本数据库</div></a>
+                    <a href="#"><div>加载示例数据库</div></a>
+                </div>
+            </div>
+
+            <div class="layui-card">
+                <div class="layui-card-header">MYSQL数据操作</div>
+                <div class="layui-card-body">
+                    <a href="#"><div>SELECT</div></a>
+                    <a href="#"><div>ORDER BY</div></a>
+                    <a href="#"><div>WHERE</div></a>
+                    <a href="#"><div>SELECT DISTINCT</div></a>
+                    <a href="#"><div>AND</div></a>
+                    <a href="#"><div>OR</div></a>
+                    <a href="#"><div>IN</div></a>
+                    <a href="#"><div>BETWEEN</div></a>
+                    <a href="#"><div>LIKE</div></a>
+                    <a href="#"><div>LIMIT</div></a>
+                    <a href="#"><div>IS NULL</div></a>
+                    <a href="#"><div>Table & Column Aliases</div></a>
+                    <a href="#"><div>Joins</div></a>
+                    <a href="#"><div>INNER JOIN</div></a>
+                    <a href="#"><div>LEFT JOIN</div></a>
+                    <a href="#"><div>RIGHT JOIN</div></a>
+                    <a href="#"><div>Self Join</div></a>
+                    <a href="#"><div>CROSS JOIN</div></a>
+                    <a href="#"><div>GROUP BY</div></a>
+                    <a href="#"><div>HAVING</div></a>
+                    <a href="#"><div>ROLLUP</div></a>
+                    <a href="#"><div>Subquery</div></a>
+                    <a href="#"><div>Derived Tables</div></a>
+                    <a href="#"><div>EXISTS</div></a>
+                    <a href="#"><div>UNION</div></a>
+                    <a href="#"><div>MINUS</div></a>
+                    <a href="#"><div>INTERSECT</div></a>
+                    <a href="#"><div>INSERT</div></a>
+                    <a href="#"><div>Insert Multiple Rows</div></a>
+                    <a href="#"><div>INSERT INTO SELECT</div></a>
+                    <a href="#"><div>Insert On Duplicate Key Update</div></a>
+                    <a href="#"><div>INSERT IGNORE</div></a>
+                    <a href="#"><div>UPDATE</div></a>
+                    <a href="#"><div>UPDATE JOIN</div></a>
+                    <a href="#"><div>DELETE</div></a>
+                    <a href="#"><div>DELETE JOIN</div></a>
+                    <a href="#"><div>ON DELETE CASCADE</div></a>
+                    <a href="#"><div>REPLACE</div></a>
+                </div>
+            </div>
+
+            <div class="layui-card">
+                <div class="layui-card-header">MYSQL数据定义</div>
+                <div class="layui-card-body">
+                 <a href="#"><div>Selecting Database</div></a>
+                 <a href="#"><div>CREATE DATABASE</div></a>
+                 <a href="#"><div>DROP DATABASE</div></a>
+                 <a href="#"><div>Managing Databases</div></a>
+                 <a href="#"><div>Storage Engines</div></a>
+                 <a href="#"><div>Data Types</div></a>
+                 <a href="#"><div>CREATE TABLE</div></a>
+                 <a href="#"><div>Primary Key</div></a>
+                 <a href="#"><div>Foreign Key</div></a>
+                 <a href="#"><div>UNIQUE Constraint</div></a>
+                 <a href="#"><div>CHECK Constraint</div></a>
+                 <a href="#"><div>NOT NULL</div></a>
+                 <a href="#"><div>Sequence</div></a>
+                 <a href="#"><div>ALTER TABLE</div></a>
+                 <a href="#"><div>ADD COLUMN</div></a>
+                 <a href="#"><div>DROP COLUMN</div></a>
+                 <a href="#"><div>RENAME TABLE</div></a>
+                 <a href="#"><div>DROP TABLE</div></a>
+                 <a href="#"><div>Temporary Tables</div></a>
+                 <a href="#"><div>TRUNCATE TABLE</div></a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

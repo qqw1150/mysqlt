@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <base href="http://mysqlt.zhangyong.name"/>
+    <link rel="stylesheet" type="text/css" href="/plugs/layui/css/layui.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/base.css?2"/>
+    <style>
+        .top{
+            height: 80px;
+        }
+        .top .log{
+            height: 70px;
+            background: url(http://mysqltutorial.org//wp-content/uploads/2016/01/mysqltutorial.png) no-repeat left center;
+        }
+        .top .log a{
+            display: block;
+            float: left;
+            min-height: 60px;
+            text-indent: -9999px;
+            width: 100%;
+        }
+        .top .nav{
+            height: 80px;
+            line-height: 80px;
+        }
+
+        .main{
+            margin-top: 10px;
+        }
+        .main .left{
+            width: 73%;
+            margin-right: 2%;
+        }
+        .main .right{
+            width: 25%;
+        }
+        .layadmin-serach-list li{
+            display: flex;
+            flex-direction: row;
+            margin: 20px 0;
+        }
+        .layadmin-serach-list li .layui-serachlist-cover img{
+            width: 60px;
+        }
+        .layadmin-serach-list li .layui-serachlist-text{
+            margin: 0 10px;
+        }
+
+        .fancy-list dt{
+            margin-top: 20px;
+        }
+        .main .left ul{
+            margin: 10px 0;
+        }
+        .main .left p{
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="top layui-bg-green">
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md3 log">
+                <a href="http://www.mysqltutorial.org/">MySQL Tutorial</a>
+            </div>
+            <div class="layui-col-md8 layui-col-lg-offset1">
+                <ul class="layui-nav layui-bg-green nav" lay-filter="">
+                    <li class="layui-nav-item"><a href="">首页</a></li>
+                    <li class="layui-nav-item"><a href="">开始</a></li>
+                    <li class="layui-nav-item"><a href="">基础</a></li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">高级</a>
+                        <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                            <dd><a href="">MYSQL 存储过程</a></dd>
+                            <dd><a href="">MYSQL 视图</a></dd>
+                            <dd><a href="">MYSQL 触发器</a></dd>
+                            <dd><a href="">MYSQL 事件</a></dd>
+                            <dd><a href="">MYSQL 索引</a></dd>
+                            <dd><a href="">MYSQL 管理</a></dd>
+                            <dd><a href="">MYSQL 全文搜索</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item"><a href="">社区</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="layui-container main">
+    <div class="layui-row">
+        <div class="layui-col-md9 layui-card left">
+            <div class="layui-card-body">
+                <div class="layui-breadcrumb">
+                    <a href="#">首页</a>
+                    <a href="#"><cite>开始使用MySQL</cite></a>
+                </div>
+                <div class="entry-content"><p><strong><span style="vertical-align: inherit;"><span
+                        style="vertical-align: inherit;">简介</span></span></strong><span
+                        style="vertical-align: inherit;"><span
+                        style="vertical-align: inherit;">：本教程可帮助您回答以下问题：什么是MySQL？</span><span
+                        style="vertical-align: inherit;">并说明为什么MySQL是世界上最流行的开源数据库。</span></span></p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">要了解MySQL，您首先需要了解数据库和SQL。</span><span
+                            style="vertical-align: inherit;">如果您已经知道数据库和SQL，则可以跳至“ </span></span><em><span
+                            style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">什么是MySQL”</span></span></em><span
+                            style="vertical-align: inherit;"><span style="vertical-align: inherit;">部分。</span></span>
+                    </p>
+                    <h2><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">数据库简介</span></span></h2>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">您每天都在处理数据……</span></span>
+                    </p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">当您想听自己喜欢的歌曲时，可以从智能手机打开播放列表。</span><span
+                            style="vertical-align: inherit;">在这种情况下，播放列表是一个数据库。</span></span></p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">当您拍摄照片并将其上传到Facebook等社交网络上的帐户时，您的照片库就是一个数据库。</span></span>
+                    </p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">当您浏览电子商务网站购买鞋子，衣服等时，您将使用购物车数据库。</span></span>
+                    </p>
+                    <p><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">数据库无处不在。</span><span style="vertical-align: inherit;">那么什么是数据库？</span><span
+                            style="vertical-align: inherit;">根据定义，数据库仅仅是结构化的数据集合。</span></span></p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">本质上彼此相关的数据，例如产品属于产品类别并与多个标签关联。</span><span
+                            style="vertical-align: inherit;">因此，我们使用术语“ </span></span><strong><span
+                            style="vertical-align: inherit;"><span style="vertical-align: inherit;">关系数据库”</span></span></strong><span
+                            style="vertical-align: inherit;"><span style="vertical-align: inherit;">。</span></span></p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">在关系数据库中，我们使用表为产品，类别，标签等数据建模。</span><span
+                            style="vertical-align: inherit;">一个表包含列和行。</span><span style="vertical-align: inherit;">就像电子表格一样。</span></span>
+                    </p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">一个表可以使用例如一对一和一对多的关系与另一个表相关。</span></span>
+                    </p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">因为我们处理大量数据，所以我们需要一种方法来定义数据库，表等，并更有效地处理数据。</span><span
+                            style="vertical-align: inherit;">此外，我们希望将数据转化为信息。</span></span></p>
+                    <p><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">这就是SQL发挥作用的地方。</span></span></p>
+                    <h2><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">SQL
+                        &nbsp;关系数据库的语言</span></span></h2>
+                    <p><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">SQL代表结构化查询语言。</span></span></p>
+                    <p><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">SQL是用于访问数据库的标准化语言。</span></span></p>
+                    <p class="note"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">ANSI /
+                        SQL定义了SQL标准。</span><span style="vertical-align: inherit;">SQL的当前版本是SQL：2016。</span><span
+                            style="vertical-align: inherit;">每当我们引用SQL标准时，都是指当前的SQL版本。</span></span></p>
+                    <p><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">SQL包含三个部分：</span></span></p>
+                    <ol>
+                        <li><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">数据定义语言包括可帮助您定义数据库及其对象的语句，例如，表，</span></span><a
+                                href="http://www.mysqltutorial.org/mysql-views-tutorial.aspx"><span
+                                style="vertical-align: inherit;"><span style="vertical-align: inherit;">视图</span></span></a><span
+                                style="vertical-align: inherit;"><span
+                                style="vertical-align: inherit;">，</span></span><a
+                                href="http://www.mysqltutorial.org/mysql-triggers.aspx"><span
+                                style="vertical-align: inherit;"><span
+                                style="vertical-align: inherit;">触发器</span></span></a><span
+                                style="vertical-align: inherit;"><span
+                                style="vertical-align: inherit;">，</span></span><a
+                                href="http://www.mysqltutorial.org/mysql-stored-procedure-tutorial.aspx"><span
+                                style="vertical-align: inherit;"><span
+                                style="vertical-align: inherit;">存储过程</span></span></a><span
+                                style="vertical-align: inherit;"><span style="vertical-align: inherit;">等。</span></span>
+                        </li>
+                        <li><span style="vertical-align: inherit;"><span
+                                style="vertical-align: inherit;">数据操作语言包含允许您</span></span><a
+                                href="http://www.mysqltutorial.org/mysql-update-data.aspx"><span
+                                style="vertical-align: inherit;"><span style="vertical-align: inherit;">更新</span></span></a><span
+                                style="vertical-align: inherit;"><span
+                                style="vertical-align: inherit;">和</span></span><a
+                                href="http://www.mysqltutorial.org/mysql-select-statement-query-data.aspx"><span
+                                style="vertical-align: inherit;"><span
+                                style="vertical-align: inherit;">查询数据的语句</span></span></a><span
+                                style="vertical-align: inherit;"><span style="vertical-align: inherit;">。</span></span>
+                        </li>
+                        <li><span style="vertical-align: inherit;"><span
+                                style="vertical-align: inherit;">数据控制语言允许您向</span><span
+                                style="vertical-align: inherit;">用户授予访问数据库中特定数据</span></span><a
+                                href="http://www.mysqltutorial.org/mysql-grant.aspx"><span
+                                style="vertical-align: inherit;"><span
+                                style="vertical-align: inherit;">的权限</span></span></a><span
+                                style="vertical-align: inherit;"><span style="vertical-align: inherit;">。</span></span>
+                        </li>
+                    </ol>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">现在，您了解了数据库和SQL，是时候回答下一个问题了……</span></span>
+                    </p>
+                    <h2><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">什么是MySQL</span></span></h2>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">MySQL的？</span><span
+                            style="vertical-align: inherit;">什么？</span></span></p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">我是</span></span><a
+                            href="https://en.wikipedia.org/wiki/Michael_Widenius"><span
+                            style="vertical-align: inherit;"><span style="vertical-align: inherit;">MySQL共同创始人Monty
+                        Widenius</span></span></a><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">的女儿的名字</span><span
+                            style="vertical-align: inherit;">。</span></span></p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">MySQL的名称是My和SQL，MySQL的组合。</span></span>
+                    </p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">MySQL是一个数据库管理系统，允许您管理关系数据库。</span><span
+                            style="vertical-align: inherit;">它是由Oracle支持的开源软件。</span><span
+                            style="vertical-align: inherit;">这意味着您无需支付一分钱即可使用MySQL。</span><span
+                            style="vertical-align: inherit;">另外，如果需要，可以更改其源代码以适合您的需求。</span></span></p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">即使MySQL是开源软件，您也可以从Oracle购买商业许可版本以获得高级支持服务。</span></span>
+                    </p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">与其他数据库软件（如Oracle数据库或Microsoft
+                        SQL Server）相比，MySQL易于掌握。</span></span></p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">MySQL可以在UNIX，Linux，Windows等各种平台上运行。您可以将其安装在服务器甚至台式机上。</span><span
+                            style="vertical-align: inherit;">此外，MySQL可靠，可扩展且快速。</span></span></p>
+                    <p class="note"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">MySQL的正式发音是</span></span><em><span
+                            style="vertical-align: inherit;"><span style="vertical-align: inherit;">My Ess Que Ell，而不是My
+                        Sequel。</span></span></em><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">但是，您可以随心所欲发音，谁在乎呢？</span></span></p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">如果您开发网站或Web应用程序，MySQL是一个不错的选择。</span><span
+                            style="vertical-align: inherit;">MySQL是LAMP堆栈的重要组成部分，包括Linux，Apache，MySQL和PHP。</span></span>
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="layui-col-md3 right">
+            <div class="layui-card">
+                <div class="layui-card-header">MYSQL快速启动</div>
+                <div class="layui-card-body">
+                    <a href="#"><div>MySQL是什么?</div></a>
+                    <a href="#"><div>安装MySQL数据库服务器</div></a>
+                    <a href="#"><div>连接到MySQL服务器</div></a>
+                    <a href="#"><div>下载MySQL样本数据库</div></a>
+                    <a href="#"><div>加载示例数据库</div></a>
+                </div>
+            </div>
+
+            <div class="layui-card">
+                <div class="layui-card-header">MYSQL数据操作</div>
+                <div class="layui-card-body">
+                    <a href="#"><div>SELECT</div></a>
+                    <a href="#"><div>ORDER BY</div></a>
+                    <a href="#"><div>WHERE</div></a>
+                    <a href="#"><div>SELECT DISTINCT</div></a>
+                    <a href="#"><div>AND</div></a>
+                    <a href="#"><div>OR</div></a>
+                    <a href="#"><div>IN</div></a>
+                    <a href="#"><div>BETWEEN</div></a>
+                    <a href="#"><div>LIKE</div></a>
+                    <a href="#"><div>LIMIT</div></a>
+                    <a href="#"><div>IS NULL</div></a>
+                    <a href="#"><div>Table & Column Aliases</div></a>
+                    <a href="#"><div>Joins</div></a>
+                    <a href="#"><div>INNER JOIN</div></a>
+                    <a href="#"><div>LEFT JOIN</div></a>
+                    <a href="#"><div>RIGHT JOIN</div></a>
+                    <a href="#"><div>Self Join</div></a>
+                    <a href="#"><div>CROSS JOIN</div></a>
+                    <a href="#"><div>GROUP BY</div></a>
+                    <a href="#"><div>HAVING</div></a>
+                    <a href="#"><div>ROLLUP</div></a>
+                    <a href="#"><div>Subquery</div></a>
+                    <a href="#"><div>Derived Tables</div></a>
+                    <a href="#"><div>EXISTS</div></a>
+                    <a href="#"><div>UNION</div></a>
+                    <a href="#"><div>MINUS</div></a>
+                    <a href="#"><div>INTERSECT</div></a>
+                    <a href="#"><div>INSERT</div></a>
+                    <a href="#"><div>Insert Multiple Rows</div></a>
+                    <a href="#"><div>INSERT INTO SELECT</div></a>
+                    <a href="#"><div>Insert On Duplicate Key Update</div></a>
+                    <a href="#"><div>INSERT IGNORE</div></a>
+                    <a href="#"><div>UPDATE</div></a>
+                    <a href="#"><div>UPDATE JOIN</div></a>
+                    <a href="#"><div>DELETE</div></a>
+                    <a href="#"><div>DELETE JOIN</div></a>
+                    <a href="#"><div>ON DELETE CASCADE</div></a>
+                    <a href="#"><div>REPLACE</div></a>
+                </div>
+            </div>
+
+            <div class="layui-card">
+                <div class="layui-card-header">MYSQL数据定义</div>
+                <div class="layui-card-body">
+                    <a href="#"><div>Selecting Database</div></a>
+                    <a href="#"><div>CREATE DATABASE</div></a>
+                    <a href="#"><div>DROP DATABASE</div></a>
+                    <a href="#"><div>Managing Databases</div></a>
+                    <a href="#"><div>Storage Engines</div></a>
+                    <a href="#"><div>Data Types</div></a>
+                    <a href="#"><div>CREATE TABLE</div></a>
+                    <a href="#"><div>Primary Key</div></a>
+                    <a href="#"><div>Foreign Key</div></a>
+                    <a href="#"><div>UNIQUE Constraint</div></a>
+                    <a href="#"><div>CHECK Constraint</div></a>
+                    <a href="#"><div>NOT NULL</div></a>
+                    <a href="#"><div>Sequence</div></a>
+                    <a href="#"><div>ALTER TABLE</div></a>
+                    <a href="#"><div>ADD COLUMN</div></a>
+                    <a href="#"><div>DROP COLUMN</div></a>
+                    <a href="#"><div>RENAME TABLE</div></a>
+                    <a href="#"><div>DROP TABLE</div></a>
+                    <a href="#"><div>Temporary Tables</div></a>
+                    <a href="#"><div>TRUNCATE TABLE</div></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="./plugs/layui/layui.all.js"></script>
+<script>
+    var form = layui.form
+        ,layer = layui.layer;
+</script>
+</body>
+</html>

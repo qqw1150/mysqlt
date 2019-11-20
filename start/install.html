@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <base href="http://mysqlt.zhangyong.name"/>
+    <link rel="stylesheet" type="text/css" href="/plugs/layui/css/layui.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/base.css?2"/>
+    <style>
+        .top{
+            height: 80px;
+        }
+        .top .log{
+            height: 70px;
+            background: url(http://mysqltutorial.org//wp-content/uploads/2016/01/mysqltutorial.png) no-repeat left center;
+        }
+        .top .log a{
+            display: block;
+            float: left;
+            min-height: 60px;
+            text-indent: -9999px;
+            width: 100%;
+        }
+        .top .nav{
+            height: 80px;
+            line-height: 80px;
+        }
+
+        .main{
+            margin-top: 10px;
+        }
+        .main .left{
+            width: 73%;
+            margin-right: 2%;
+        }
+        .main .right{
+            width: 25%;
+        }
+        .layadmin-serach-list li{
+            display: flex;
+            flex-direction: row;
+            margin: 20px 0;
+        }
+        .layadmin-serach-list li .layui-serachlist-cover img{
+            width: 60px;
+        }
+
+        .fancy-list dt{
+            margin-top: 20px;
+        }
+        .main .left ul{
+            margin: 10px 0;
+        }
+        .main .left p{
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="top layui-bg-green">
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md3 log">
+                <a href="http://www.mysqltutorial.org/">MySQL Tutorial</a>
+            </div>
+            <div class="layui-col-md8 layui-col-lg-offset1">
+                <ul class="layui-nav layui-bg-green nav" lay-filter="">
+                    <li class="layui-nav-item"><a href="">首页</a></li>
+                    <li class="layui-nav-item"><a href="">开始</a></li>
+                    <li class="layui-nav-item"><a href="">基础</a></li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">高级</a>
+                        <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                            <dd><a href="">MYSQL 存储过程</a></dd>
+                            <dd><a href="">MYSQL 视图</a></dd>
+                            <dd><a href="">MYSQL 触发器</a></dd>
+                            <dd><a href="">MYSQL 事件</a></dd>
+                            <dd><a href="">MYSQL 索引</a></dd>
+                            <dd><a href="">MYSQL 管理</a></dd>
+                            <dd><a href="">MYSQL 全文搜索</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item"><a href="">社区</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="layui-container main">
+    <div class="layui-row">
+        <div class="layui-col-md9 layui-card left">
+            <div class="layui-card-body">
+                <div class="layui-breadcrumb">
+                    <a href="#">首页</a>
+                    <a href="#"><cite>开始使用MySQL</cite></a>
+                </div>
+                <div class="entry-content"><p><strong><span style="vertical-align: inherit;"><span
+                        style="vertical-align: inherit;">摘要</span></span></strong><span
+                        style="vertical-align: inherit;"><span style="vertical-align: inherit;">：在本教程中，您将逐步学习如何使用MySQL
+                    Installer在Windows平台上安装MySQL。</span><span style="vertical-align: inherit;">学习完本教程后，您将在系统上启动并运行MySQL服务器及其工具，以进行学习和练习。</span></span>
+                </p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">请注意，如果您使用其他操作系统平台（例如Linux和macOS），请使用以下教程：</span></span>
+                    </p>
+                    <ul>
+                        <li><a href="http://www.mysqltutorial.org/install-mysql-centos/"><span
+                                style="vertical-align: inherit;"><span style="vertical-align: inherit;">在CentOS
+                            7上安装MySQL 8</span></span></a></li>
+                        <li><a href="http://www.mysqltutorial.org/install-mysql-ubuntu/"><span
+                                style="vertical-align: inherit;"><span style="vertical-align: inherit;">在Ubuntu上安装MySQL
+                            8</span></span></a></li>
+                    </ul>
+                    <h2><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">下载MySQL
+                        Installer</span></span></h2>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">如果要在Windows环境中安装MySQL，使用MySQL安装程序是最简单的方法。</span><span
+                            style="vertical-align: inherit;">MySQL安装程序为您提供了一个易于使用的向导，可帮助您使用以下组件来安装MySQL：</span></span>
+                    </p>
+                    <ul>
+                        <li><span style="vertical-align: inherit;"><span
+                                style="vertical-align: inherit;">MySQL服务器</span></span></li>
+                        <li><span style="vertical-align: inherit;"><span
+                                style="vertical-align: inherit;">所有可用的连接器</span></span></li>
+                        <li><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">带有示例数据模型的MySQL
+                            Workbench</span></span></li>
+                        <li><span style="vertical-align: inherit;"><span
+                                style="vertical-align: inherit;">MySQL通知程序</span></span></li>
+                        <li><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Excel和Microsoft
+                            Visual Studio的工具</span></span></li>
+                        <li><span style="vertical-align: inherit;"><span
+                                style="vertical-align: inherit;">MySQL示例数据库</span></span></li>
+                        <li><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">MySQL文档</span></span>
+                        </li>
+                    </ul>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">要下载MySQL安装程序，请转到以下链接&nbsp; </span></span><a
+                            href="http://dev.mysql.com/downloads/installer/"><span
+                            style="vertical-align: inherit;"><span style="vertical-align: inherit;">http://dev.mysql.com/downloads/installer/</span></span></a><span
+                            style="vertical-align: inherit;"><span style="vertical-align: inherit;">。</span><span
+                            style="vertical-align: inherit;">有两个安装程序文件：</span></span></p>
+                    <ul>
+                        <li><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">如果在安装MySQL时连接到Internet，则可以选择在线安装版本&nbsp; </span></span><code>mysql-installer-web-community-&lt;version&gt;.exe</code><span
+                                style="vertical-align: inherit;"><span style="vertical-align: inherit;">。</span></span>
+                        </li>
+                        <li><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">如果要脱机安装MySQL，可以下载该&nbsp; </span></span><code>mysql-installer-community-&lt;version&gt;.exe&nbsp;</code><span
+                                style="vertical-align: inherit;"><span
+                                style="vertical-align: inherit;">文件。</span></span></li>
+                    </ul>
+                    <h2><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">通过MySQL
+                        Installer安装MySQL</span></span></h2>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">要使用MySQL安装程序安装MySQL，请双击MySQL安装程序文件，然后执行以下步骤：</span></span>
+                    </p>
+                    <p>
+                    <noscript><img
+                            src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-1.png"
+                            alt="Install MySQL Step 1"/></noscript>
+                    <img class=" lazyloaded"
+                         src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-1.png"
+                         data-src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-1.png"
+                         alt="安装MySQL步骤1"><br><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;"> 安装MySQL步骤1：Windows配置MySQL Installer</span></span><p>
+                    <noscript><img
+                            src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-2.png"
+                            alt="Install MySQL Step 2 - Welcome Screen"/></noscript>
+                    <img class=" lazyloaded"
+                         src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-2.png"
+                         data-src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-2.png"
+                         alt="安装MySQL步骤2-欢迎屏幕"><br><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">安装MySQL步骤2 –欢迎屏幕：欢迎屏幕提供了多个选项。</span><span
+                            style="vertical-align: inherit;">选择第一个选项：安装MySQL产品</span></span><p>
+                    <noscript><img
+                            src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-3.png"
+                            alt="Install MySQL Step 3 - Download the latest MySQL products"/></noscript>
+                    <img class=" lazyloaded"
+                         src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-3.png"
+                         data-src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-3.png"
+                         alt="安装MySQL步骤3-下载最新的MySQL产品"><br><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;"> 安装MySQL步骤3
+                        –下载最新的MySQL产品：MySQL安装程序检查并下载最新的MySQL产品，包括MySQL服务器，MySQL Workbench等。</span></span><p>
+                    <noscript><img
+                            src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-4.png"
+                            alt="Install MySQL Step 4"/></noscript>
+                    <img class=" lazyloaded"
+                         src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-4.png"
+                         data-src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-4.png"
+                         alt="安装MySQL步骤4"><br><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;"> 安装MySQL步骤4：单击“下一步”继续</span></span><p>
+                    <noscript><img
+                            src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-5.png"
+                            alt="Install MySQL Step 5 - Choosing a Setup Type"/></noscript>
+                    <img class=" lazyloaded"
+                         src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-5.png"
+                         data-src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-5.png"
+                         alt="安装MySQL步骤5-选择安装类型"><br><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">安装MySQL步骤5 –选择安装类型：有几种安装类型可用。</span><span
+                            style="vertical-align: inherit;">选择“完全”选项以安装所有MySQL产品和功能。</span></span><p>
+                    <noscript><img
+                            src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-6.png"
+                            alt="Install MYSQL Step 6 - Checking Requirements"/></noscript>
+                    <img class=" lazyloaded"
+                         src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-6.png"
+                         data-src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-6.png"
+                         alt="安装MYSQL步骤6-检查要求"><br><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;"> 安装MySQL步骤6 –检查要求</span></span><p>
+                    <noscript><img
+                            src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-7.png"
+                            alt="Install MySQL Step 7 - Installation Progress"/></noscript>
+                    <img class=" lazyloaded"
+                         src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-7.png"
+                         data-src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-7.png"
+                         alt="安装MySQL步骤7-安装进度"><br><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">安装MySQL步骤7 –安装进度：MySQL Installer下载所有选定的产品。</span><span
+                            style="vertical-align: inherit;">这将需要一段时间，具体取决于您选择的产品和Internet连接的速度。</span></span><p>
+                    <noscript><img
+                            src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-7-process.png"
+                            alt="Install MySQL Step 7 - Installation Progress - Downloading Products in Progress"/>
+                    </noscript>
+                    <img class=" lazyloaded"
+                         src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-7-process.png"
+                         data-src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-7-process.png"
+                         alt="安装MySQL步骤7-安装进度-正在下载产品"><br><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;"> 安装MySQL步骤7 –安装进度：下载正在进行的产品。</span></span><p>
+                    <noscript><img
+                            src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-7-done.png"
+                            alt="Install MySQL Step 7 - Installation Progress - Complete Downloading"/></noscript>
+                    <img class=" lazyloaded"
+                         src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-7-done.png"
+                         data-src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-7-done.png"
+                         alt="安装MySQL步骤7-安装进度-完整下载"><br><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">安装MySQL步骤7 –安装进度：完成下载。</span><span
+                            style="vertical-align: inherit;">单击</span></span><strong><span
+                            style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">下一步</span></span></strong><span
+                            style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">按钮继续…</span></span><p>
+                    <noscript><img
+                            src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-8.png"
+                            alt="Install MySQL Step 8 - Configuration Overview "/></noscript>
+                    <img class=" lazyloaded"
+                         src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-8.png"
+                         data-src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-8.png"
+                         alt="安装MySQL步骤8-配置概述 "><br><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">安装MySQL步骤8 –配置概述。</span><span
+                            style="vertical-align: inherit;">单击下一步按钮配置MySQL数据库服务器</span></span><p>
+                    <noscript><img
+                            src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-9.png"
+                            alt="Install MySQL Step 8.1 - MySQL Server Configuration"/></noscript>
+                    <img class=" lazyloaded"
+                         src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-9.png"
+                         data-src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-9.png"
+                         alt="安装MySQL步骤8.1-MySQL服务器配置"><br><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;"> 安装MySQL步骤8.1 –
+                        MySQL服务器配置：选择“配置类型”和MySQL端口（默认为3006），然后单击“下一步”按钮继续。</span></span><p>
+                    <noscript><img
+                            src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-10.png"
+                            alt="Install MySQL Step 8.1 - MySQL Server Configuration"/></noscript>
+                    <img class=" lazyloaded"
+                         src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-10.png"
+                         data-src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-10.png"
+                         alt="安装MySQL步骤8.1-MySQL服务器配置"><br><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">安装MySQL步骤8.1 – MySQL服务器配置：为该</span></span><code>root</code><span
+                            style="vertical-align: inherit;"><span style="vertical-align: inherit;">帐户</span><span
+                            style="vertical-align: inherit;">选择一个密码</span><span
+                            style="vertical-align: inherit;">。</span><span style="vertical-align: inherit;">如果要在生产服务器上安装MySQL数据库服务器，请注意密码下载并保持安全。</span><span
+                            style="vertical-align: inherit;">如果要添加更多的MySQL用户，则可以在此步骤中进行。</span></span><p>
+                    <noscript><img
+                            src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-11.png"
+                            alt="Install MySQL Step 8.1 - MySQL Server Configuration"/></noscript>
+                    <img class=" lazyloaded"
+                         src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-11.png"
+                         data-src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-11.png"
+                         alt="安装MySQL步骤8.1-MySQL服务器配置"><br><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;"> 安装MySQL步骤8.1 –
+                        MySQL服务器配置：选择Windows服务详细信息，包括Windows服务名称和帐户类型，然后单击“下一步”按钮继续。</span></span><p>
+                    <noscript><img
+                            src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-12.png"
+                            alt="Install MySQL Step 8.1 - MySQL Server Configuration - In Progress"/></noscript>
+                    <img class=" lazyloaded"
+                         src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-12.png"
+                         data-src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-12.png"
+                         alt="安装MySQL步骤8.1-MySQL服务器配置-进行中"><br><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">安装MySQL步骤8.1 –
+                        MySQL服务器配置–进行中：MySQL安装程序正在配置MySQL数据库服务器。</span><span style="vertical-align: inherit;">等待完成，然后单击“下一步”按钮继续。</span></span>
+                    <p>
+                    <noscript><img
+                            src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-13-done.png"
+                            alt="Install MySQL Step 8.1 - MySQL Server Configuration - Done"/></noscript>
+                    <img class=" lazyloaded"
+                         src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-13-done.png"
+                         data-src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-13-done.png"
+                         alt="安装MySQL步骤8.1-MySQL服务器配置-完成"><br><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">安装MySQL步骤8.1 – MySQL服务器配置–完成。</span><span
+                            style="vertical-align: inherit;">单击下一步按钮继续。</span></span><p>
+                    <noscript><img
+                            src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-13.png"
+                            alt="Install MySQL Step 8.2 - Configuration Overview "/></noscript>
+                    <img class=" lazyloaded"
+                         src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-13.png"
+                         data-src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-13.png"
+                         alt="安装MySQL步骤8.2-配置概述 "><br><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;"> 安装MySQL步骤8.2 –配置概述：MySQL
+                        Installer安装示例数据库和示例模型。</span></span><p>
+                    <noscript><img
+                            src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-14.png"
+                            alt="Install MySQL Step 9 - Installation Completes"/></noscript>
+                    <img class=" lazyloaded"
+                         src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-14.png"
+                         data-src="http://www.mysqltutorial.org//wp-content/uploads/2013/05/install-mysql-step-14.png"
+                         alt="安装MySQL步骤9-安装完成"><p><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">安装MySQL步骤9 –安装完成：安装完成。</span><span
+                            style="vertical-align: inherit;">单击</span></span><strong><span
+                            style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">完成</span></span></strong><span
+                            style="vertical-align: inherit;"><span style="vertical-align: inherit;">按钮以关闭安装向导并启动MySQL
+                        Workbench。</span></span></p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">在本教程中，您学习了如何使用MySQL安装程序在Windows系统上安装MySQL。</span></span>
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="layui-col-md3 right">
+            <div class="layui-card">
+                <div class="layui-card-header">MYSQL快速启动</div>
+                <div class="layui-card-body">
+                    <a href="#"><div>MySQL是什么?</div></a>
+                    <a href="#"><div>安装MySQL数据库服务器</div></a>
+                    <a href="#"><div>连接到MySQL服务器</div></a>
+                    <a href="#"><div>下载MySQL样本数据库</div></a>
+                    <a href="#"><div>加载示例数据库</div></a>
+                </div>
+            </div>
+
+            <div class="layui-card">
+                <div class="layui-card-header">MYSQL数据操作</div>
+                <div class="layui-card-body">
+                    <a href="#"><div>SELECT</div></a>
+                    <a href="#"><div>ORDER BY</div></a>
+                    <a href="#"><div>WHERE</div></a>
+                    <a href="#"><div>SELECT DISTINCT</div></a>
+                    <a href="#"><div>AND</div></a>
+                    <a href="#"><div>OR</div></a>
+                    <a href="#"><div>IN</div></a>
+                    <a href="#"><div>BETWEEN</div></a>
+                    <a href="#"><div>LIKE</div></a>
+                    <a href="#"><div>LIMIT</div></a>
+                    <a href="#"><div>IS NULL</div></a>
+                    <a href="#"><div>Table & Column Aliases</div></a>
+                    <a href="#"><div>Joins</div></a>
+                    <a href="#"><div>INNER JOIN</div></a>
+                    <a href="#"><div>LEFT JOIN</div></a>
+                    <a href="#"><div>RIGHT JOIN</div></a>
+                    <a href="#"><div>Self Join</div></a>
+                    <a href="#"><div>CROSS JOIN</div></a>
+                    <a href="#"><div>GROUP BY</div></a>
+                    <a href="#"><div>HAVING</div></a>
+                    <a href="#"><div>ROLLUP</div></a>
+                    <a href="#"><div>Subquery</div></a>
+                    <a href="#"><div>Derived Tables</div></a>
+                    <a href="#"><div>EXISTS</div></a>
+                    <a href="#"><div>UNION</div></a>
+                    <a href="#"><div>MINUS</div></a>
+                    <a href="#"><div>INTERSECT</div></a>
+                    <a href="#"><div>INSERT</div></a>
+                    <a href="#"><div>Insert Multiple Rows</div></a>
+                    <a href="#"><div>INSERT INTO SELECT</div></a>
+                    <a href="#"><div>Insert On Duplicate Key Update</div></a>
+                    <a href="#"><div>INSERT IGNORE</div></a>
+                    <a href="#"><div>UPDATE</div></a>
+                    <a href="#"><div>UPDATE JOIN</div></a>
+                    <a href="#"><div>DELETE</div></a>
+                    <a href="#"><div>DELETE JOIN</div></a>
+                    <a href="#"><div>ON DELETE CASCADE</div></a>
+                    <a href="#"><div>REPLACE</div></a>
+                </div>
+            </div>
+
+            <div class="layui-card">
+                <div class="layui-card-header">MYSQL数据定义</div>
+                <div class="layui-card-body">
+                 <a href="#"><div>Selecting Database</div></a>
+                 <a href="#"><div>CREATE DATABASE</div></a>
+                 <a href="#"><div>DROP DATABASE</div></a>
+                 <a href="#"><div>Managing Databases</div></a>
+                 <a href="#"><div>Storage Engines</div></a>
+                 <a href="#"><div>Data Types</div></a>
+                 <a href="#"><div>CREATE TABLE</div></a>
+                 <a href="#"><div>Primary Key</div></a>
+                 <a href="#"><div>Foreign Key</div></a>
+                 <a href="#"><div>UNIQUE Constraint</div></a>
+                 <a href="#"><div>CHECK Constraint</div></a>
+                 <a href="#"><div>NOT NULL</div></a>
+                 <a href="#"><div>Sequence</div></a>
+                 <a href="#"><div>ALTER TABLE</div></a>
+                 <a href="#"><div>ADD COLUMN</div></a>
+                 <a href="#"><div>DROP COLUMN</div></a>
+                 <a href="#"><div>RENAME TABLE</div></a>
+                 <a href="#"><div>DROP TABLE</div></a>
+                 <a href="#"><div>Temporary Tables</div></a>
+                 <a href="#"><div>TRUNCATE TABLE</div></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="./plugs/layui/layui.all.js"></script>
+<script>
+    var form = layui.form
+        ,layer = layui.layer;
+</script>
+</body>
+</html>
