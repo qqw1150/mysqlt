@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <base href="http://mysqlt.zhangyong.name"/>
+    <link rel="stylesheet" type="text/css" href="/plugs/layui/css/layui.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/base.css?2"/>
+    <style>
+        .top{
+            height: 80px;
+        }
+        .top .log{
+            height: 70px;
+            background: url(http://mysqltutorial.org//wp-content/uploads/2016/01/mysqltutorial.png) no-repeat left center;
+        }
+        .top .log a{
+            display: block;
+            float: left;
+            min-height: 60px;
+            text-indent: -9999px;
+            width: 100%;
+        }
+        .top .nav{
+            height: 80px;
+            line-height: 80px;
+        }
+
+        .main{
+            margin-top: 10px;
+        }
+        .main .left{
+            width: 73%;
+            margin-right: 2%;
+        }
+        .main .right{
+            width: 25%;
+        }
+        .layadmin-serach-list li{
+            display: flex;
+            flex-direction: row;
+            margin: 20px 0;
+        }
+        .layadmin-serach-list li .layui-serachlist-cover img{
+            width: 60px;
+        }
+        .layadmin-serach-list li .layui-serachlist-text{
+            margin: 0 10px;
+        }
+
+        .fancy-list dt{
+            margin-top: 20px;
+        }
+        .main .left ul{
+            margin: 10px 0;
+        }
+        .main .left p{
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="top layui-bg-green">
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md3 log">
+                <a href="http://www.mysqltutorial.org/">MySQL Tutorial</a>
+            </div>
+            <div class="layui-col-md8 layui-col-lg-offset1">
+                <ul class="layui-nav layui-bg-green nav" lay-filter="">
+                    <li class="layui-nav-item"><a href="">首页</a></li>
+                    <li class="layui-nav-item"><a href="">开始</a></li>
+                    <li class="layui-nav-item"><a href="">基础</a></li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">高级</a>
+                        <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                            <dd><a href="">MYSQL 存储过程</a></dd>
+                            <dd><a href="">MYSQL 视图</a></dd>
+                            <dd><a href="">MYSQL 触发器</a></dd>
+                            <dd><a href="">MYSQL 事件</a></dd>
+                            <dd><a href="">MYSQL 索引</a></dd>
+                            <dd><a href="">MYSQL 管理</a></dd>
+                            <dd><a href="">MYSQL 全文搜索</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item"><a href="">社区</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="layui-container main">
+    <div class="layui-row">
+        <div class="layui-col-md9 layui-card left">
+            <div class="layui-card-body">
+                <div class="layui-breadcrumb">
+                    <a href="#">首页</a>
+                    <a href="#"><cite>开始使用MySQL</cite></a>
+                </div>
+                <div class="entry-content"><p><span style="vertical-align: inherit;"><span
+                        style="vertical-align: inherit;">我们将该</span></span><code>classicmodels</code><span
+                        style="vertical-align: inherit;"><span
+                        style="vertical-align: inherit;">数据库用作</span></span><strong><span
+                        style="vertical-align: inherit;"><span
+                        style="vertical-align: inherit;">MySQL示例数据库，</span></span></strong><span
+                        style="vertical-align: inherit;"><span style="vertical-align: inherit;">以帮助您快速有效地使用MySQL。</span><span
+                        style="vertical-align: inherit;">该</span></span><code>classicmodels</code><span
+                        style="vertical-align: inherit;"><span style="vertical-align: inherit;">数据库是经典汽车比例模型的零售商。</span><span
+                        style="vertical-align: inherit;">它包含典型的业务数据，例如客户，产品，销售订单，销售订单行项目等。</span></span></p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">我们在</span></span><a
+                            title="MySQL教程" href="http://www.mysqltutorial.org/"><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">MySQL教程中</span></span></a><span
+                            style="vertical-align: inherit;"><span style="vertical-align: inherit;">使用此示例数据库</span><span
+                            style="vertical-align: inherit;">来演示从</span></span><a title="基本的MySQL教程"
+                                                                                  href="http://www.mysqltutorial.org/basic-mysql-tutorial.aspx"><span
+                            style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">简单查询</span></span></a><span
+                            style="vertical-align: inherit;"><span style="vertical-align: inherit;">到复杂</span></span><a
+                            title="MySQL存储过程"
+                            href="http://www.mysqltutorial.org/mysql-stored-procedure-tutorial.aspx"><span
+                            style="vertical-align: inherit;"><span style="vertical-align: inherit;">存储过程的</span></span></a><span
+                            style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">许多MySQL功能</span><span
+                            style="vertical-align: inherit;">。</span></span></p>
+                    <h2><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">下载MySQL示例数据库</span></span></h2>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">您可以通过以下链接下载MySQL示例数据库：</span></span>
+                    </p>
+                    <p><a class="buttonDownload"
+                          href="http://www.mysqltutorial.org/wp-content/uploads/2018/03/mysqlsampledatabase.zip"
+                          rel="noopener"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">下载MySQL示例数据库</span></span></a>
+                    </p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">下载文件为ZIP格式，因此您需要一个zip程序将其解压缩。</span><span
+                            style="vertical-align: inherit;">您可以从</span></span><a title="下载免费的zip程序"
+                                                                                  href="http://www.7-zip.org"
+                                                                                  rel="nofollow"><span
+                            style="vertical-align: inherit;"><span style="vertical-align: inherit;">www.7-zip.org</span></span></a><span
+                            style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">下载免费的zip程序</span><span
+                            style="vertical-align: inherit;">。</span></span></p>
+                    <p><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">解压缩&nbsp; </span></span><code>sampledatabase.zip</code><span
+                            style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">文件后，可以按照&nbsp; </span></span><a title="加载MySQL示例数据库"
+                                                                                             href="http://www.mysqltutorial.org/how-to-load-sample-database-into-mysql-database-server.aspx"><span
+                            style="vertical-align: inherit;"><span style="vertical-align: inherit;">如何将示例数据库加载到MySQL数据库服务器教程中的方法将示例数据库加载到MySQL数据库服务器中，</span></span></a><span
+                            style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">并使用以下SQL语句对其进行测试：</span></span></p>
+                    <div id="crayon-5dd516efbee43846052999"
+                         class="crayon-syntax crayon-theme-coy-copied crayon-span-sourcecodepro crayon-os-pc print-yes notranslate"
+                         data-settings=" no-popup minimize scroll-mouseover wrap"
+                         style=" margin-top: 12px; margin-bottom: 12px; span-size: 14px !important; line-height: 19px !important;">
+                        <div class="crayon-plain-wrap"></div>
+                        <div class="crayon-main" style="">
+                            <table class="crayon-table">
+                                <tbody>
+                                <tr class="crayon-row">
+                                    <td class="crayon-nums " data-settings="show">
+                                        <div class="crayon-nums-content"
+                                             style="span-size: 14px !important; line-height: 19px !important;">
+                                            <div class="crayon-num" data-line="crayon-5dd516efbee43846052999-1">1</div>
+                                            <div class="crayon-num" data-line="crayon-5dd516efbee43846052999-2">2</div>
+                                        </div>
+                                    </td>
+                                    <td class="crayon-code">
+                                        <div class="crayon-pre"
+                                             style="span-size: 14px !important; line-height: 19px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;">
+                                            <div class="crayon-line" id="crayon-5dd516efbee43846052999-1"><span
+                                                    class="crayon-st">USE</span><span class="crayon-h"> </span>classicmodels;
+                                            </div>
+                                            <div class="crayon-line" id="crayon-5dd516efbee43846052999-2"><span
+                                                    class="crayon-st">SELECT</span><span class="crayon-h"> </span>*<span
+                                                    class="crayon-h"> </span><span class="crayon-st">FROM</span><span
+                                                    class="crayon-h"> </span>customers;
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <p><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">基本上，这些语句将当前数据库切换到</span><span
+                            style="vertical-align: inherit;">表</span></span><code>classicmodels</code><span
+                            style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">并从</span></span><code>customers</code><span
+                            style="vertical-align: inherit;"><span style="vertical-align: inherit;">表中</span><span
+                            style="vertical-align: inherit;">查询数据</span><span
+                            style="vertical-align: inherit;">。</span><span style="vertical-align: inherit;">如果看到返回的客户数据，则说明您已成功将示例数据库导入MySQL数据库服务器。</span></span>
+                    </p>
+                    <h2><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">MySQL示例数据库架构</span></span></h2>
+                    <p><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">MySQL示例数据库模式由下表组成：</span></span></p>
+                    <ul>
+                        <li><strong><span style="vertical-align: inherit;"><span
+                                style="vertical-align: inherit;">客户</span></span></strong><span
+                                style="vertical-align: inherit;"><span style="vertical-align: inherit;">：存储客户数据。</span></span>
+                        </li>
+                        <li><strong><span style="vertical-align: inherit;"><span
+                                style="vertical-align: inherit;">产品</span></span></strong><span
+                                style="vertical-align: inherit;"><span
+                                style="vertical-align: inherit;">：存储比例模型车的列表。</span></span></li>
+                        <li><strong><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">ProductLines</span></span></strong><span
+                                style="vertical-align: inherit;"><span
+                                style="vertical-align: inherit;">：存储产品线类别的列表。</span></span></li>
+                        <li><strong><span style="vertical-align: inherit;"><span
+                                style="vertical-align: inherit;">订单</span></span></strong><span
+                                style="vertical-align: inherit;"><span
+                                style="vertical-align: inherit;">：存储客户下达的销售订单。</span></span></li>
+                        <li><strong><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">OrderDetails</span></span></strong><span
+                                style="vertical-align: inherit;"><span style="vertical-align: inherit;">：存储每个销售订单的销售订单行项目。</span></span>
+                        </li>
+                        <li><strong><span style="vertical-align: inherit;"><span
+                                style="vertical-align: inherit;">付款</span></span></strong><span
+                                style="vertical-align: inherit;"><span
+                                style="vertical-align: inherit;">：存储客户根据其帐户支付的款项。</span></span></li>
+                        <li><strong><span style="vertical-align: inherit;"><span
+                                style="vertical-align: inherit;">员工</span></span></strong><span
+                                style="vertical-align: inherit;"><span style="vertical-align: inherit;">：存储所有员工信息以及组织结构，例如谁向谁报告。</span></span>
+                        </li>
+                        <li><strong><span style="vertical-align: inherit;"><span
+                                style="vertical-align: inherit;">办事处</span></span></strong><span
+                                style="vertical-align: inherit;"><span
+                                style="vertical-align: inherit;">：存储销售办事处数据。</span></span></li>
+                    </ul>
+                    <p>
+                    <noscript><img class="wp-image-2298 aligncenter" title="MySQL Sample Database Schema"
+                                   src="http://www.mysqltutorial.org/wp-content/uploads/2009/12/MySQL-Sample-Database-Schema.png"
+                                   alt="MySQL Sample Database Schema"
+                                   srcset="http://www.mysqltutorial.org/wp-content/uploads/2009/12/MySQL-Sample-Database-Schema.png 701w, http://www.mysqltutorial.org/wp-content/uploads/2009/12/MySQL-Sample-Database-Schema-300x240.png 300w"
+                                   sizes="(max-width: 701px) 100vw, 701px"/></noscript>
+                    <img class="wp-image-2298 aligncenter lazyloaded" title="MySQL示例数据库架构"
+                         src="http://www.mysqltutorial.org/wp-content/uploads/2009/12/MySQL-Sample-Database-Schema.png"
+                         data-src="http://www.mysqltutorial.org/wp-content/uploads/2009/12/MySQL-Sample-Database-Schema.png"
+                         alt="MySQL示例数据库架构"
+                         data-srcset="http://www.mysqltutorial.org/wp-content/uploads/2009/12/MySQL-Sample-Database-Schema.png 701w, http://www.mysqltutorial.org/wp-content/uploads/2009/12/MySQL-Sample-Database-Schema-300x240.png 300w"
+                         data-sizes="(max-width: 701px) 100vw, 701px" sizes="(max-width: 701px) 100vw, 701px"
+                         srcset="http://www.mysqltutorial.org/wp-content/uploads/2009/12/MySQL-Sample-Database-Schema.png 701w, http://www.mysqltutorial.org/wp-content/uploads/2009/12/MySQL-Sample-Database-Schema-300x240.png 300w"></p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">您可以通过以下链接下载PDF格式的MySQL示例数据库ER图。</span></span>
+                    </p>
+                    <p><a class="buttonDownload"
+                          href="http://www.mysqltutorial.org/wp-content/uploads/2018/04/MySQL-Sample-Database-Diagram-PDF-A4.pdf"
+                          rel="noopener"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">下载MySQL示例数据库图PDF
+                        A4</span></span></a></p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">我们建议您打印出ER图并将其粘贴到办公桌上，以在学习MySQL时熟悉该架构。</span></span>
+                    </p>
+                    <p><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">祝您学习MySQL玩得开心！</span></span></p>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="layui-col-md3 right">
+            <div class="layui-card">
+                <div class="layui-card-header">MYSQL快速启动</div>
+                <div class="layui-card-body">
+                    <a href="#"><div>MySQL是什么?</div></a>
+                    <a href="#"><div>安装MySQL数据库服务器</div></a>
+                    <a href="#"><div>连接到MySQL服务器</div></a>
+                    <a href="#"><div>下载MySQL样本数据库</div></a>
+                    <a href="#"><div>加载示例数据库</div></a>
+                </div>
+            </div>
+
+            <div class="layui-card">
+                <div class="layui-card-header">MYSQL数据操作</div>
+                <div class="layui-card-body">
+                    <a href="#"><div>SELECT</div></a>
+                    <a href="#"><div>ORDER BY</div></a>
+                    <a href="#"><div>WHERE</div></a>
+                    <a href="#"><div>SELECT DISTINCT</div></a>
+                    <a href="#"><div>AND</div></a>
+                    <a href="#"><div>OR</div></a>
+                    <a href="#"><div>IN</div></a>
+                    <a href="#"><div>BETWEEN</div></a>
+                    <a href="#"><div>LIKE</div></a>
+                    <a href="#"><div>LIMIT</div></a>
+                    <a href="#"><div>IS NULL</div></a>
+                    <a href="#"><div>Table & Column Aliases</div></a>
+                    <a href="#"><div>Joins</div></a>
+                    <a href="#"><div>INNER JOIN</div></a>
+                    <a href="#"><div>LEFT JOIN</div></a>
+                    <a href="#"><div>RIGHT JOIN</div></a>
+                    <a href="#"><div>Self Join</div></a>
+                    <a href="#"><div>CROSS JOIN</div></a>
+                    <a href="#"><div>GROUP BY</div></a>
+                    <a href="#"><div>HAVING</div></a>
+                    <a href="#"><div>ROLLUP</div></a>
+                    <a href="#"><div>Subquery</div></a>
+                    <a href="#"><div>Derived Tables</div></a>
+                    <a href="#"><div>EXISTS</div></a>
+                    <a href="#"><div>UNION</div></a>
+                    <a href="#"><div>MINUS</div></a>
+                    <a href="#"><div>INTERSECT</div></a>
+                    <a href="#"><div>INSERT</div></a>
+                    <a href="#"><div>Insert Multiple Rows</div></a>
+                    <a href="#"><div>INSERT INTO SELECT</div></a>
+                    <a href="#"><div>Insert On Duplicate Key Update</div></a>
+                    <a href="#"><div>INSERT IGNORE</div></a>
+                    <a href="#"><div>UPDATE</div></a>
+                    <a href="#"><div>UPDATE JOIN</div></a>
+                    <a href="#"><div>DELETE</div></a>
+                    <a href="#"><div>DELETE JOIN</div></a>
+                    <a href="#"><div>ON DELETE CASCADE</div></a>
+                    <a href="#"><div>REPLACE</div></a>
+                </div>
+            </div>
+
+            <div class="layui-card">
+                <div class="layui-card-header">MYSQL数据定义</div>
+                <div class="layui-card-body">
+                 <a href="#"><div>Selecting Database</div></a>
+                 <a href="#"><div>CREATE DATABASE</div></a>
+                 <a href="#"><div>DROP DATABASE</div></a>
+                 <a href="#"><div>Managing Databases</div></a>
+                 <a href="#"><div>Storage Engines</div></a>
+                 <a href="#"><div>Data Types</div></a>
+                 <a href="#"><div>CREATE TABLE</div></a>
+                 <a href="#"><div>Primary Key</div></a>
+                 <a href="#"><div>Foreign Key</div></a>
+                 <a href="#"><div>UNIQUE Constraint</div></a>
+                 <a href="#"><div>CHECK Constraint</div></a>
+                 <a href="#"><div>NOT NULL</div></a>
+                 <a href="#"><div>Sequence</div></a>
+                 <a href="#"><div>ALTER TABLE</div></a>
+                 <a href="#"><div>ADD COLUMN</div></a>
+                 <a href="#"><div>DROP COLUMN</div></a>
+                 <a href="#"><div>RENAME TABLE</div></a>
+                 <a href="#"><div>DROP TABLE</div></a>
+                 <a href="#"><div>Temporary Tables</div></a>
+                 <a href="#"><div>TRUNCATE TABLE</div></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="./plugs/layui/layui.all.js"></script>
+<script>
+    var form = layui.form
+        ,layer = layui.layer;
+</script>
+</body>
+</html>
