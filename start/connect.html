@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <base href="http://mysqlt.zhangyong.name"/>
+    <link rel="stylesheet" type="text/css" href="/plugs/layui/css/layui.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/base.css?2"/>
+    <style>
+        .top{
+            height: 80px;
+        }
+        .top .log{
+            height: 70px;
+            background: url(http://mysqltutorial.org//wp-content/uploads/2016/01/mysqltutorial.png) no-repeat left center;
+        }
+        .top .log a{
+            display: block;
+            float: left;
+            min-height: 60px;
+            text-indent: -9999px;
+            width: 100%;
+        }
+        .top .nav{
+            height: 80px;
+            line-height: 80px;
+        }
+
+        .main{
+            margin-top: 10px;
+        }
+        .main .left{
+            width: 73%;
+            margin-right: 2%;
+        }
+        .main .right{
+            width: 25%;
+        }
+        .layadmin-serach-list li{
+            display: flex;
+            flex-direction: row;
+            margin: 20px 0;
+        }
+        .layadmin-serach-list li .layui-serachlist-cover img{
+            width: 60px;
+        }
+        .layadmin-serach-list li .layui-serachlist-text{
+            margin: 0 10px;
+        }
+
+        .fancy-list dt{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="top layui-bg-green">
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md3 log">
+                <a href="http://www.mysqltutorial.org/">MySQL Tutorial</a>
+            </div>
+            <div class="layui-col-md8 layui-col-lg-offset1">
+                <ul class="layui-nav layui-bg-green nav" lay-filter="">
+                    <li class="layui-nav-item"><a href="">首页</a></li>
+                    <li class="layui-nav-item"><a href="">开始</a></li>
+                    <li class="layui-nav-item"><a href="">基础</a></li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">高级</a>
+                        <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                            <dd><a href="">MYSQL 存储过程</a></dd>
+                            <dd><a href="">MYSQL 视图</a></dd>
+                            <dd><a href="">MYSQL 触发器</a></dd>
+                            <dd><a href="">MYSQL 事件</a></dd>
+                            <dd><a href="">MYSQL 索引</a></dd>
+                            <dd><a href="">MYSQL 管理</a></dd>
+                            <dd><a href="">MYSQL 全文搜索</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item"><a href="">社区</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="layui-container main">
+    <div class="layui-row">
+        <div class="layui-col-md9 layui-card left">
+            <div class="layui-card-body">
+                <div class="layui-breadcrumb">
+                    <a href="#">首页</a>
+                    <a href="#"><cite>开始使用MySQL</cite></a>
+                </div>
+                <div class="entry-content"><p><strong><span style="vertical-align: inherit;"><span
+                        style="vertical-align: inherit;">摘要</span></span></strong><span
+                        style="vertical-align: inherit;"><span style="vertical-align: inherit;">：在本教程中，您将学习如何使用mysql命令行客户端和MySQL
+                    Workbench连接到MySQL Server。</span></span></p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">一旦</span></span><a
+                            href="http://www.mysqltutorial.org/install-mysql/"><span
+                            style="vertical-align: inherit;"><span style="vertical-align: inherit;">安装</span></span></a><span
+                            style="vertical-align: inherit;"><span style="vertical-align: inherit;">了</span><a
+                            href="http://www.mysqltutorial.org/install-mysql/"><span style="vertical-align: inherit;">MySQL服务器</span></a><span
+                            style="vertical-align: inherit;">，就可以使用任何客户端程序（例如mysql命令行客户端和MySQL工作台）连接到它。</span></span>
+                    </p>
+                    <h2><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">使用mysql命令行客户端连接到MySQL</span></span>
+                    </h2>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">mysql是一个命令行客户端程序，允许您以交互和非交互模式与MySQL进行交互。</span></span>
+                    </p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">mysql命令行客户端通常位于MySQL安装文件夹的bin目录中。</span></span>
+                    </p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">要调用mysql程序，只需导航到MySQL安装文件夹的bin目录并键入：</span></span>
+                    </p>
+                    <div id="crayon-5dd4e9ca9ae1b230132241"
+                         class="crayon-syntax crayon-theme-coy-copied crayon-span-sourcecodepro crayon-os-pc print-yes notranslate"
+                         data-settings=" no-popup minimize scroll-mouseover wrap"
+                         style=" margin-top: 12px; margin-bottom: 12px; span-size: 14px !important; line-height: 19px !important;">
+                        <div class="crayon-plain-wrap"></div>
+                        <div class="crayon-main" style="">
+                            <table class="crayon-table">
+                                <tbody>
+                                <tr class="crayon-row">
+                                    <td class="crayon-nums " data-settings="show">
+                                        <div class="crayon-nums-content"
+                                             style="span-size: 14px !important; line-height: 19px !important;">
+                                            <div class="crayon-num" data-line="crayon-5dd4e9ca9ae1b230132241-1">1</div>
+                                        </div>
+                                    </td>
+                                    <td class="crayon-code">
+                                        <div class="crayon-pre"
+                                             style="span-size: 14px !important; line-height: 19px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;">
+                                            <div class="crayon-line" id="crayon-5dd4e9ca9ae1b230132241-1">mysql</div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <p><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">如果mysql程序已经在中</span></span><code>PATH</code><span
+                            style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">，则可以使用mysql命令简单地调用它。</span></span></p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">要连接到MySQL服务器，请使用以下命令：</span></span>
+                    </p>
+                    <div id="crayon-5dd4e9ca9ae25074956170"
+                         class="crayon-syntax crayon-theme-coy-copied crayon-span-sourcecodepro crayon-os-pc print-yes notranslate"
+                         data-settings=" no-popup minimize scroll-mouseover wrap"
+                         style=" margin-top: 12px; margin-bottom: 12px; span-size: 14px !important; line-height: 19px !important;">
+                        <div class="crayon-plain-wrap"></div>
+                        <div class="crayon-main" style="">
+                            <table class="crayon-table">
+                                <tbody>
+                                <tr class="crayon-row">
+                                    <td class="crayon-nums " data-settings="show">
+                                        <div class="crayon-nums-content"
+                                             style="span-size: 14px !important; line-height: 19px !important;">
+                                            <div class="crayon-num" data-line="crayon-5dd4e9ca9ae25074956170-1">1</div>
+                                        </div>
+                                    </td>
+                                    <td class="crayon-code">
+                                        <div class="crayon-pre"
+                                             style="span-size: 14px !important; line-height: 19px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;">
+                                            <div class="crayon-line" id="crayon-5dd4e9ca9ae25074956170-1">shell<span
+                                                    class="crayon-o">&gt;</span>mysql<span
+                                                    class="crayon-h"> </span>-u<span class="crayon-h"> </span>root<span
+                                                    class="crayon-h"> </span>-p
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <p><code>-u root</code><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">表示您使用用户帐户连接到MySQL
+                        Server </span></span><code>root</code><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">。</span></span></p>
+                    <p><code>-p</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+                        指示mysql提示输入密码。</span></span></p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">您输入用户帐户root的密码，然后按Enter：</span></span>
+                    </p>
+                    <div id="crayon-5dd4e9ca9ae28306938451"
+                         class="crayon-syntax crayon-theme-coy-copied crayon-span-sourcecodepro crayon-os-pc print-yes notranslate"
+                         data-settings=" no-popup minimize scroll-mouseover wrap"
+                         style=" margin-top: 12px; margin-bottom: 12px; span-size: 14px !important; line-height: 19px !important;">
+                        <div class="crayon-plain-wrap"></div>
+                        <div class="crayon-main" style="">
+                            <table class="crayon-table">
+                                <tbody>
+                                <tr class="crayon-row">
+                                    <td class="crayon-nums " data-settings="show">
+                                        <div class="crayon-nums-content"
+                                             style="span-size: 14px !important; line-height: 19px !important;">
+                                            <div class="crayon-num" data-line="crayon-5dd4e9ca9ae28306938451-1">1</div>
+                                        </div>
+                                    </td>
+                                    <td class="crayon-code">
+                                        <div class="crayon-pre"
+                                             style="span-size: 14px !important; line-height: 19px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;">
+                                            <div class="crayon-line" id="crayon-5dd4e9ca9ae28306938451-1">Enter<span
+                                                    class="crayon-h"> </span><span
+                                                    class="crayon-st">password</span>:<span class="crayon-h"> </span>********
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">如果一切正常，您将使用以下命令连接到MySQL服务器：</span></span>
+                    </p>
+                    <div id="crayon-5dd4e9ca9ae2a994682415"
+                         class="crayon-syntax crayon-theme-coy-copied crayon-span-sourcecodepro crayon-os-pc print-yes notranslate"
+                         data-settings=" no-popup minimize scroll-mouseover wrap"
+                         style=" margin-top: 12px; margin-bottom: 12px; span-size: 14px !important; line-height: 19px !important;">
+                        <div class="crayon-plain-wrap"></div>
+                        <div class="crayon-main" style="">
+                            <table class="crayon-table">
+                                <tbody>
+                                <tr class="crayon-row">
+                                    <td class="crayon-nums " data-settings="show">
+                                        <div class="crayon-nums-content"
+                                             style="span-size: 14px !important; line-height: 19px !important;">
+                                            <div class="crayon-num" data-line="crayon-5dd4e9ca9ae2a994682415-1">1</div>
+                                        </div>
+                                    </td>
+                                    <td class="crayon-code">
+                                        <div class="crayon-pre"
+                                             style="span-size: 14px !important; line-height: 19px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;">
+                                            <div class="crayon-line" id="crayon-5dd4e9ca9ae2a994682415-1">mysql<span
+                                                    class="crayon-h">&gt;</span></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <p><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">要显示当前服务器中的数据库，请使用以下</span></span><code><a
+                            href="http://www.mysqltutorial.org/mysql-show-databases/">SHOW DATABASES</a></code><span
+                            style="vertical-align: inherit;"><span style="vertical-align: inherit;">语句：</span></span>
+                    </p>
+                    <div id="crayon-5dd4e9ca9ae2c395297139"
+                         class="crayon-syntax crayon-theme-coy-copied crayon-span-sourcecodepro crayon-os-pc print-yes notranslate"
+                         data-settings=" no-popup minimize scroll-mouseover wrap"
+                         style=" margin-top: 12px; margin-bottom: 12px; span-size: 14px !important; line-height: 19px !important;">
+                        <div class="crayon-plain-wrap"></div>
+                        <div class="crayon-main" style="">
+                            <table class="crayon-table">
+                                <tbody>
+                                <tr class="crayon-row">
+                                    <td class="crayon-nums " data-settings="show">
+                                        <div class="crayon-nums-content"
+                                             style="span-size: 14px !important; line-height: 19px !important;">
+                                            <div class="crayon-num" data-line="crayon-5dd4e9ca9ae2c395297139-1">1</div>
+                                        </div>
+                                    </td>
+                                    <td class="crayon-code">
+                                        <div class="crayon-pre"
+                                             style="span-size: 14px !important; line-height: 19px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;">
+                                            <div class="crayon-line" id="crayon-5dd4e9ca9ae2c395297139-1">mysql<span
+                                                    class="crayon-h">&gt;</span><span class="crayon-h"> </span><span
+                                                    class="crayon-st">show</span><span class="crayon-h"> </span><span
+                                                    class="crayon-st">databases</span>;
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">这是输出：</span></span>
+                    </p>
+                    <div id="crayon-5dd4e9ca9ae2d970678538"
+                         class="crayon-syntax crayon-theme-coy-copied crayon-span-sourcecodepro crayon-os-pc print-yes notranslate"
+                         data-settings=" no-popup minimize scroll-mouseover wrap"
+                         style=" margin-top: 12px; margin-bottom: 12px; span-size: 14px !important; line-height: 19px !important;">
+                        <div class="crayon-plain-wrap"></div>
+                        <div class="crayon-main" style="">
+                            <table class="crayon-table">
+                                <tbody>
+                                <tr class="crayon-row">
+                                    <td class="crayon-nums " data-settings="show">
+                                        <div class="crayon-nums-content"
+                                             style="span-size: 14px !important; line-height: 19px !important;">
+                                            <div class="crayon-num" data-line="crayon-5dd4e9ca9ae2d970678538-1">1</div>
+                                            <div class="crayon-num" data-line="crayon-5dd4e9ca9ae2d970678538-2">2</div>
+                                            <div class="crayon-num" data-line="crayon-5dd4e9ca9ae2d970678538-3">3</div>
+                                            <div class="crayon-num" data-line="crayon-5dd4e9ca9ae2d970678538-4">4</div>
+                                            <div class="crayon-num" data-line="crayon-5dd4e9ca9ae2d970678538-5">5</div>
+                                            <div class="crayon-num" data-line="crayon-5dd4e9ca9ae2d970678538-6">6</div>
+                                            <div class="crayon-num" data-line="crayon-5dd4e9ca9ae2d970678538-7">7</div>
+                                            <div class="crayon-num" data-line="crayon-5dd4e9ca9ae2d970678538-8">8</div>
+                                            <div class="crayon-num" data-line="crayon-5dd4e9ca9ae2d970678538-9">9</div>
+                                        </div>
+                                    </td>
+                                    <td class="crayon-code">
+                                        <div class="crayon-pre"
+                                             style="span-size: 14px !important; line-height: 19px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;">
+                                            <div class="crayon-line" id="crayon-5dd4e9ca9ae2d970678538-1">
+                                                +--------------------+
+                                            </div>
+                                            <div class="crayon-line" id="crayon-5dd4e9ca9ae2d970678538-2">|<span
+                                                    class="crayon-h"> </span><span
+                                                    class="crayon-st">Database</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>|
+                                            </div>
+                                            <div class="crayon-line" id="crayon-5dd4e9ca9ae2d970678538-3">
+                                                +--------------------+
+                                            </div>
+                                            <div class="crayon-line" id="crayon-5dd4e9ca9ae2d970678538-4">|<span
+                                                    class="crayon-h"> </span>information_schema<span
+                                                    class="crayon-h"> </span>|
+                                            </div>
+                                            <div class="crayon-line" id="crayon-5dd4e9ca9ae2d970678538-5">|<span
+                                                    class="crayon-h"> </span>mysql<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>|
+                                            </div>
+                                            <div class="crayon-line" id="crayon-5dd4e9ca9ae2d970678538-6">|<span
+                                                    class="crayon-h"> </span>performance_schema<span
+                                                    class="crayon-h"> </span>|
+                                            </div>
+                                            <div class="crayon-line" id="crayon-5dd4e9ca9ae2d970678538-7">|<span
+                                                    class="crayon-h"> </span>sys<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>|
+                                            </div>
+                                            <div class="crayon-line" id="crayon-5dd4e9ca9ae2d970678538-8">
+                                                +--------------------+
+                                            </div>
+                                            <div class="crayon-line" id="crayon-5dd4e9ca9ae2d970678538-9">4<span
+                                                    class="crayon-h"> </span><span class="crayon-st">rows</span><span
+                                                    class="crayon-h"> </span><span class="crayon-st">in</span><span
+                                                    class="crayon-h"> </span><span class="crayon-st">set</span><span
+                                                    class="crayon-h"> </span>(0.01<span class="crayon-h"> </span>sec)
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <p></p>
+                    <h2><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">使用MySQL
+                        Workbench连接到MySQL</span></span></h2>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">步骤1.启动MySQL
+                        Workbench。</span></span></p>
+                    <p>
+                    <noscript><img class="alignnone size-full wp-image-9008"
+                                   src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-1.png"
+                                   alt="connect to mysql - mysql workbench step 1" width="966" height="593"
+                                   srcset="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-1.png 966w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-1-200x123.png 200w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-1-768x471.png 768w"
+                                   sizes="(max-width: 966px) 100vw, 966px"/></noscript>
+                    <img class="alignnone size-full wp-image-9008 lazyloaded"
+                         src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-1.png"
+                         data-src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-1.png"
+                         alt="连接到mysql-mysql工作台步骤1" width="966" height="593"
+                         data-srcset="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-1.png 966w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-1-200x123.png 200w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-1-768x471.png 768w"
+                         data-sizes="(max-width: 966px) 100vw, 966px" sizes="(max-width: 966px) 100vw, 966px"
+                         srcset="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-1.png 966w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-1-200x123.png 200w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-1-768x471.png 768w"></p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">您可以使用“数据库”&gt;“连接到数据库...”菜单连接到MySQL服务器，或单击“
+                        MySQL连接”旁边的+按钮。</span></span></p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">只需单击“
+                        MySQL连接”旁边的+按钮即可继续。</span></span></p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">步骤2.输入连接名称，例如Localhost。</span><span
+                            style="vertical-align: inherit;">您可以随意命名。</span><span style="vertical-align: inherit;">默认情况下，用户名是</span></span><code>root</code><span
+                            style="vertical-align: inherit;"><span style="vertical-align: inherit;">。</span><span
+                            style="vertical-align: inherit;">如果使用其他用户帐户，则可以在“用户名”文本框中进行更改。</span></span></p>
+                    <p>
+                    <noscript><img class="alignnone size-full wp-image-9009"
+                                   src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-2.png"
+                                   alt="connect to mysql - mysql workbench step 2" width="786" height="493"
+                                   srcset="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-2.png 786w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-2-200x125.png 200w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-2-768x482.png 768w"
+                                   sizes="(max-width: 786px) 100vw, 786px"/></noscript>
+                    <img class="alignnone size-full wp-image-9009 lazyloaded"
+                         src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-2.png"
+                         data-src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-2.png"
+                         alt="连接到mysql-mysql workbench步骤2" width="786" height="493"
+                         data-srcset="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-2.png 786w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-2-200x125.png 200w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-2-768x482.png 768w"
+                         data-sizes="(max-width: 786px) 100vw, 786px" sizes="(max-width: 786px) 100vw, 786px"
+                         srcset="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-2.png 786w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-2-200x125.png 200w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-2-768x482.png 768w"></p>
+                    <p><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">步骤3.单击</span></span><code>Store in Vault ...</code><span
+                            style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">按钮输入提供的用户帐户的密码。</span><span
+                            style="vertical-align: inherit;">将显示一个窗口。</span><span style="vertical-align: inherit;">您输入密码，然后单击确定按钮。</span></span>
+                    </p>
+                    <p>
+                    <noscript><img class="alignnone size-full wp-image-9010"
+                                   src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-3.png"
+                                   alt="" width="786" height="493"
+                                   srcset="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-3.png 786w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-3-200x125.png 200w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-3-768x482.png 768w"
+                                   sizes="(max-width: 786px) 100vw, 786px"/></noscript>
+                    <img class="alignnone size-full wp-image-9010 lazyloaded"
+                         src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-3.png"
+                         data-src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-3.png"
+                         alt="" width="786" height="493"
+                         data-srcset="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-3.png 786w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-3-200x125.png 200w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-3-768x482.png 768w"
+                         data-sizes="(max-width: 786px) 100vw, 786px" sizes="(max-width: 786px) 100vw, 786px"
+                         srcset="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-3.png 786w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-3-200x125.png 200w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-3-768x482.png 768w"></p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">步骤4.单击“测试连接”按钮以测试与MySQL
+                        Server的连接是否成功。</span><span style="vertical-align: inherit;">如果成功建立连接，然后单击“确定”按钮。</span></span>
+                    </p>
+                    <p>
+                    <noscript><img class="alignnone size-full wp-image-9011"
+                                   src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-4.png"
+                                   alt="connect to mysql - mysql workbench step 4" width="786" height="493"
+                                   srcset="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-4.png 786w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-4-200x125.png 200w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-4-768x482.png 768w"
+                                   sizes="(max-width: 786px) 100vw, 786px"/></noscript>
+                    <img class="alignnone size-full wp-image-9011 lazyloaded"
+                         src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-4.png"
+                         data-src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-4.png"
+                         alt="连接到mysql-mysql workbench步骤4" width="786" height="493"
+                         data-srcset="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-4.png 786w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-4-200x125.png 200w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-4-768x482.png 768w"
+                         data-sizes="(max-width: 786px) 100vw, 786px" sizes="(max-width: 786px) 100vw, 786px"
+                         srcset="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-4.png 786w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-4-200x125.png 200w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-4-768x482.png 768w"></p>
+                    <p><span style="vertical-align: inherit;"><span
+                            style="vertical-align: inherit;">步骤5.单击确定按钮以保存连接。</span></span></p>
+                    <p>
+                    <noscript><img class="alignnone size-full wp-image-9012"
+                                   src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-5.png"
+                                   alt="connect to mysql - mysql workbench step 5" width="786" height="493"
+                                   srcset="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-5.png 786w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-5-200x125.png 200w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-5-768x482.png 768w"
+                                   sizes="(max-width: 786px) 100vw, 786px"/></noscript>
+                    <img class="alignnone size-full wp-image-9012 lazyloaded"
+                         src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-5.png"
+                         data-src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-5.png"
+                         alt="连接到mysql-mysql workbench步骤5" width="786" height="493"
+                         data-srcset="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-5.png 786w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-5-200x125.png 200w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-5-768x482.png 768w"
+                         data-sizes="(max-width: 786px) 100vw, 786px" sizes="(max-width: 786px) 100vw, 786px"
+                         srcset="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-5.png 786w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-5-200x125.png 200w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-5-768x482.png 768w"></p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">步骤6，单击“ MySQL
+                        Connections”下的新创建的连接以连接到MySQL Server：</span></span></p>
+                    <p>
+                    <noscript><img class="alignnone size-full wp-image-9013"
+                                   src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-6.png"
+                                   alt="connect to mysql - mysql workbench step 6" width="966" height="593"
+                                   srcset="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-6.png 966w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-6-200x123.png 200w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-6-768x471.png 768w"
+                                   sizes="(max-width: 966px) 100vw, 966px"/></noscript>
+                    <img class="alignnone size-full wp-image-9013 lazyloaded"
+                         src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-6.png"
+                         data-src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-6.png"
+                         alt="连接到mysql-mysql workbench步骤6" width="966" height="593"
+                         data-srcset="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-6.png 966w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-6-200x123.png 200w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-6-768x471.png 768w"
+                         data-sizes="(max-width: 966px) 100vw, 966px" sizes="(max-width: 966px) 100vw, 966px"
+                         srcset="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-6.png 966w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-6-200x123.png 200w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-6-768x471.png 768w"></p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">步骤7. MySQL
+                        Workbench显示当前模式和一个用于输入查询的窗格：</span></span></p>
+                    <p>
+                    <noscript><img class="alignnone size-full wp-image-9014"
+                                   src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-7.png"
+                                   alt="connect to mysql - mysql workbench step 7" width="966" height="593"
+                                   srcset="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-7.png 966w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-7-200x123.png 200w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-7-768x471.png 768w"
+                                   sizes="(max-width: 966px) 100vw, 966px"/></noscript>
+                    <img class="alignnone size-full wp-image-9014 lazyloaded"
+                         src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-7.png"
+                         data-src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-7.png"
+                         alt="连接到mysql-mysql workbench步骤7" width="966" height="593"
+                         data-srcset="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-7.png 966w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-7-200x123.png 200w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-7-768x471.png 768w"
+                         data-sizes="(max-width: 966px) 100vw, 966px" sizes="(max-width: 966px) 100vw, 966px"
+                         srcset="http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-7.png 966w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-7-200x123.png 200w, http://www.mysqltutorial.org/wp-content/uploads/2019/09/connect-to-mysql-mysql-workbench-step-7-768x471.png 768w"></p>
+                    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">在本教程中，您学习了如何使用mysql命令行客户端和MySQL
+                        Workbench连接到MySQL Server。</span></span></p>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="layui-col-md3 right">
+            <div class="layui-card">
+                <div class="layui-card-header">MYSQL快速启动</div>
+                <div class="layui-card-body">
+                    <a href="#"><div>MySQL是什么?</div></a>
+                    <a href="#"><div>安装MySQL数据库服务器</div></a>
+                    <a href="#"><div>连接到MySQL服务器</div></a>
+                    <a href="#"><div>下载MySQL样本数据库</div></a>
+                    <a href="#"><div>加载示例数据库</div></a>
+                </div>
+            </div>
+
+            <div class="layui-card">
+                <div class="layui-card-header">MYSQL数据操作</div>
+                <div class="layui-card-body">
+                    <a href="#"><div>SELECT</div></a>
+                    <a href="#"><div>ORDER BY</div></a>
+                    <a href="#"><div>WHERE</div></a>
+                    <a href="#"><div>SELECT DISTINCT</div></a>
+                    <a href="#"><div>AND</div></a>
+                    <a href="#"><div>OR</div></a>
+                    <a href="#"><div>IN</div></a>
+                    <a href="#"><div>BETWEEN</div></a>
+                    <a href="#"><div>LIKE</div></a>
+                    <a href="#"><div>LIMIT</div></a>
+                    <a href="#"><div>IS NULL</div></a>
+                    <a href="#"><div>Table & Column Aliases</div></a>
+                    <a href="#"><div>Joins</div></a>
+                    <a href="#"><div>INNER JOIN</div></a>
+                    <a href="#"><div>LEFT JOIN</div></a>
+                    <a href="#"><div>RIGHT JOIN</div></a>
+                    <a href="#"><div>Self Join</div></a>
+                    <a href="#"><div>CROSS JOIN</div></a>
+                    <a href="#"><div>GROUP BY</div></a>
+                    <a href="#"><div>HAVING</div></a>
+                    <a href="#"><div>ROLLUP</div></a>
+                    <a href="#"><div>Subquery</div></a>
+                    <a href="#"><div>Derived Tables</div></a>
+                    <a href="#"><div>EXISTS</div></a>
+                    <a href="#"><div>UNION</div></a>
+                    <a href="#"><div>MINUS</div></a>
+                    <a href="#"><div>INTERSECT</div></a>
+                    <a href="#"><div>INSERT</div></a>
+                    <a href="#"><div>Insert Multiple Rows</div></a>
+                    <a href="#"><div>INSERT INTO SELECT</div></a>
+                    <a href="#"><div>Insert On Duplicate Key Update</div></a>
+                    <a href="#"><div>INSERT IGNORE</div></a>
+                    <a href="#"><div>UPDATE</div></a>
+                    <a href="#"><div>UPDATE JOIN</div></a>
+                    <a href="#"><div>DELETE</div></a>
+                    <a href="#"><div>DELETE JOIN</div></a>
+                    <a href="#"><div>ON DELETE CASCADE</div></a>
+                    <a href="#"><div>REPLACE</div></a>
+                </div>
+            </div>
+
+            <div class="layui-card">
+                <div class="layui-card-header">MYSQL数据定义</div>
+                <div class="layui-card-body">
+                 <a href="#"><div>Selecting Database</div></a>
+                 <a href="#"><div>CREATE DATABASE</div></a>
+                 <a href="#"><div>DROP DATABASE</div></a>
+                 <a href="#"><div>Managing Databases</div></a>
+                 <a href="#"><div>Storage Engines</div></a>
+                 <a href="#"><div>Data Types</div></a>
+                 <a href="#"><div>CREATE TABLE</div></a>
+                 <a href="#"><div>Primary Key</div></a>
+                 <a href="#"><div>Foreign Key</div></a>
+                 <a href="#"><div>UNIQUE Constraint</div></a>
+                 <a href="#"><div>CHECK Constraint</div></a>
+                 <a href="#"><div>NOT NULL</div></a>
+                 <a href="#"><div>Sequence</div></a>
+                 <a href="#"><div>ALTER TABLE</div></a>
+                 <a href="#"><div>ADD COLUMN</div></a>
+                 <a href="#"><div>DROP COLUMN</div></a>
+                 <a href="#"><div>RENAME TABLE</div></a>
+                 <a href="#"><div>DROP TABLE</div></a>
+                 <a href="#"><div>Temporary Tables</div></a>
+                 <a href="#"><div>TRUNCATE TABLE</div></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="./plugs/layui/layui.all.js"></script>
+<script>
+    var form = layui.form
+        ,layer = layui.layer;
+</script>
+</body>
+</html>
