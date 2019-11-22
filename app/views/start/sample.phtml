@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <base href="http://mysqlt.zhangyong.name"/>
-    <link rel="stylesheet" type="text/css" href="/plugs/layui/css/layui.css"/>
-    <link rel="stylesheet" type="text/css" href="/css/base.css?2"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo WEB_ROOT?>/plugs/layui/css/layui.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo WEB_ROOT?>/css/base.css?3"/>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/agate.min.css">
     <style>
         .top{
             height: 80px;
@@ -51,8 +51,18 @@
         .fancy-list dt{
             margin-top: 20px;
         }
-        .main .left ul{
-            margin: 10px 0;
+        .entry-content ul{
+            margin-left: 40px;
+        }
+        .entry-content ul>li:before {
+            list-style-type: none;
+            content: '';
+            margin-left: -.7em;
+            margin-top: 9px;
+            width: 5px;
+            height: 5px;
+            background: #fa5b0f;
+            position: absolute;
         }
         .main .left p{
             margin: 10px 0;
@@ -128,9 +138,9 @@
                             style="vertical-align: inherit;">下载MySQL示例数据库</span></span></h2>
                     <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">您可以通过以下链接下载MySQL示例数据库：</span></span>
                     </p>
-                    <p><a class="buttonDownload"
+                    <p><a class="buttonDownload layui-btn layui-btn-danger"
                           href="http://www.mysqltutorial.org/wp-content/uploads/2018/03/mysqlsampledatabase.zip"
-                          rel="noopener"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">下载MySQL示例数据库</span></span></a>
+                          rel="noopener">下载MySQL示例数据库</a>
                     </p>
                     <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">下载文件为ZIP格式，因此您需要一个zip程序将其解压缩。</span><span
                             style="vertical-align: inherit;">您可以从</span></span><a title="下载免费的zip程序"
@@ -153,34 +163,8 @@
                          data-settings=" no-popup minimize scroll-mouseover wrap"
                          style=" margin-top: 12px; margin-bottom: 12px; span-size: 14px !important; line-height: 19px !important;">
                         <div class="crayon-plain-wrap"></div>
-                        <div class="crayon-main" style="">
-                            <table class="crayon-table">
-                                <tbody>
-                                <tr class="crayon-row">
-                                    <td class="crayon-nums " data-settings="show">
-                                        <div class="crayon-nums-content"
-                                             style="span-size: 14px !important; line-height: 19px !important;">
-                                            <div class="crayon-num" data-line="crayon-5dd516efbee43846052999-1">1</div>
-                                            <div class="crayon-num" data-line="crayon-5dd516efbee43846052999-2">2</div>
-                                        </div>
-                                    </td>
-                                    <td class="crayon-code">
-                                        <div class="crayon-pre"
-                                             style="span-size: 14px !important; line-height: 19px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;">
-                                            <div class="crayon-line" id="crayon-5dd516efbee43846052999-1"><span
-                                                    class="crayon-st">USE</span><span class="crayon-h"> </span>classicmodels;
-                                            </div>
-                                            <div class="crayon-line" id="crayon-5dd516efbee43846052999-2"><span
-                                                    class="crayon-st">SELECT</span><span class="crayon-h"> </span>*<span
-                                                    class="crayon-h"> </span><span class="crayon-st">FROM</span><span
-                                                    class="crayon-h"> </span>customers;
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                        <pre><code class="sql">USE classicmodels;
+SELECT * FROM customers;</code></pre>
                     </div>
                     <p><span style="vertical-align: inherit;"><span
                             style="vertical-align: inherit;">基本上，这些语句将当前数据库切换到</span><span
@@ -242,10 +226,9 @@
                          srcset="http://www.mysqltutorial.org/wp-content/uploads/2009/12/MySQL-Sample-Database-Schema.png 701w, http://www.mysqltutorial.org/wp-content/uploads/2009/12/MySQL-Sample-Database-Schema-300x240.png 300w"></p>
                     <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">您可以通过以下链接下载PDF格式的MySQL示例数据库ER图。</span></span>
                     </p>
-                    <p><a class="buttonDownload"
+                    <p><a class="buttonDownload layui-btn layui-btn-danger"
                           href="http://www.mysqltutorial.org/wp-content/uploads/2018/04/MySQL-Sample-Database-Diagram-PDF-A4.pdf"
-                          rel="noopener"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">下载MySQL示例数据库图PDF
-                        A4</span></span></a></p>
+                          rel="noopener">下载MySQL示例数据库图PDF A4</a></p>
                     <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">我们建议您打印出ER图并将其粘贴到办公桌上，以在学习MySQL时熟悉该架构。</span></span>
                     </p>
                     <p><span style="vertical-align: inherit;"><span
@@ -342,10 +325,8 @@
 
 
 
-<script src="./plugs/layui/layui.all.js"></script>
-<script>
-    var form = layui.form
-        ,layer = layui.layer;
-</script>
+<script src="<?php echo WEB_ROOT?>/plugs/layui/layui.all.js"></script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>

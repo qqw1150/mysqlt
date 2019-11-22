@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/plugs/layui/css/layui.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/base.css"/>
+    <style>
+        .top{
+            height: 80px;
+        }
+        .top .log{
+            height: 70px;
+            background: url(http://mysqltutorial.org//wp-content/uploads/2016/01/mysqltutorial.png) no-repeat left center;
+        }
+        .top .log a{
+            display: block;
+            float: left;
+            min-height: 60px;
+            text-indent: -9999px;
+            width: 100%;
+        }
+        .top .nav{
+            height: 80px;
+            line-height: 80px;
+        }
+
+        .main{
+            margin-top: 10px;
+        }
+        .main .left{
+            width: 73%;
+            margin-right: 2%;
+        }
+        .main .right{
+            width: 25%;
+        }
+        .layadmin-serach-list li{
+            display: flex;
+            flex-direction: row;
+            margin: 20px 0;
+        }
+        .layadmin-serach-list li .layui-serachlist-cover img{
+            width: 60px;
+        }
+        .layadmin-serach-list li .layui-serachlist-text{
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="top layui-bg-green">
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md3 log">
+                <a href="http://www.mysqltutorial.org/">MySQL Tutorial</a>
+            </div>
+            <div class="layui-col-md8 layui-col-lg-offset1">
+                <ul class="layui-nav layui-bg-green nav" lay-filter="">
+                    <li class="layui-nav-item"><a href="">首页</a></li>
+                    <li class="layui-nav-item"><a href="">开始</a></li>
+                    <li class="layui-nav-item"><a href="">基础</a></li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">高级</a>
+                        <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                            <dd><a href="">MYSQL 存储过程</a></dd>
+                            <dd><a href="">MYSQL 视图</a></dd>
+                            <dd><a href="">MYSQL 触发器</a></dd>
+                            <dd><a href="">MYSQL 事件</a></dd>
+                            <dd><a href="">MYSQL 索引</a></dd>
+                            <dd><a href="">MYSQL 管理</a></dd>
+                            <dd><a href="">MYSQL 全文搜索</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item"><a href="">社区</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="layui-container main">
+    <div class="layui-row">
+        <div class="layui-col-md9 layui-card left">
+            <article class="layui-card-body">
+                <p>欢迎来到MySQL教程网站!你将学习MySQL快速，简单和有趣。本网站为您提供了一个完整的MySQL教程，以一种易于遵循的方式呈现。每个教程都有可用的SQL脚本和屏幕截图的实际示例。</p>
+                <h2>MySQL开发教程</h2>
+                <p>你是一个想快速学习MySQL的web开发人员吗?</p>
+                <p>在本节中，您将马上开始使用MySQL。您将学习如何有效地使用MySQL来更有效地完成工作。</p>
+                <p>如果你通过整个教程，你将知道如何<a href="#">管理MySQL数据库</a>和操作数据使用各种技术，如SQL查询，<a href="#">MySQL存储过程</a>，<a href="#">数据库视图</a>，<a href="#">触发器</a>。</p>
+                <ul class="layadmin-serach-list layui-text">
+                    <li>
+                        <a href="http://www.layui.com/admin/" target="_blank" class="layui-serachlist-cover">
+                            <img src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/MySQL-Getting-Started.png">
+                        </a>
+                        <div class="layui-serachlist-text">
+                            <h3><a href="http://www.layui.com/admin/" target="_blank">开始使用MySQL</a></h3>
+                            <p>如果您以前从未使用过MySQL，本节将帮助您快速入门。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="http://www.layui.com/admin/" target="_blank" class="layui-serachlist-cover">
+                            <img src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/MySQL-Basics.png">
+                        </a>
+                        <div class="layui-serachlist-text">
+                            <h3><a href="http://www.layui.com/admin/" target="_blank">基本的MySQL教程</a></h3>
+                            <p>本节帮助您熟悉基本的MySQL，包括管理MySQL数据库和使用各种SQL语句(如INSERT、DELETE、UPDATE和SELECT)操作数据。您还将了解高级数据选择技术，包括内连接、左连接、子查询和联合。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="http://www.layui.com/admin/" target="_blank" class="layui-serachlist-cover">
+                            <img src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/MySQL-Stored-Procedure.png">
+                        </a>
+                        <div class="layui-serachlist-text">
+                            <h3><a href="#" target="_blank">MySQL存储过程</a></h3>
+                            <p>在本节中，您将学习如何在MySQL中创建存储过程和存储函数，并给出清晰的解释和实际示例。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="http://www.layui.com/admin/" target="_blank" class="layui-serachlist-cover">
+                            <img src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/MySQL-Trigger.png">
+                        </a>
+                        <div class="layui-serachlist-text">
+                            <h3><a href="http://www.layui.com/admin/" target="_blank">MySQL触发器</a></h3>
+                            <p>MySQL触发器是自动执行的存储程序，用于响应与表相关的特定事件，如插入、更新或删除。本节将向您展示如何有效地使用MySQL触发器。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="http://www.layui.com/admin/" target="_blank" class="layui-serachlist-cover">
+                            <img src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/MySQL-View.png">
+                        </a>
+                        <div class="layui-serachlist-text">
+                            <h3><a href="http://www.layui.com/admin/" target="_blank">MySQL视图</a></h3>
+                            <p>本教程向您介绍MySQL视图，它被命名为query，存储在数据库中，并逐步向您展示如何有效地管理视图。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="http://www.layui.com/admin/" target="_blank" class="layui-serachlist-cover">
+                            <img src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/MySQL-Full-text-Search.png">
+                        </a>
+                        <div class="layui-serachlist-text">
+                            <h3><a href="http://www.layui.com/admin/" target="_blank">MySQL全文搜索</a></h3>
+                            <p>在本节中，我们将向您展示如何使用MySQL全文搜索和各种全文搜索技术，如自然语言搜索、布尔语言搜索和查询扩展。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="http://www.layui.com/admin/" target="_blank" class="layui-serachlist-cover">
+                            <img src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/MySQL-Tips.png">
+                        </a>
+                        <div class="layui-serachlist-text">
+                            <h3><a href="http://www.layui.com/admin/" target="_blank">MySQL的技巧</a></h3>
+                            <p>我们为您提供先进的MySQL技术和提示，帮助您有效地解决MySQL中最困难的挑战。</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <h2>MySQL函数</h2>
+                <ul class="layadmin-serach-list layui-text">
+                    <li>
+                        <a href="http://www.layui.com/admin/" target="_blank" class="layui-serachlist-cover">
+                            <img class=" ls-is-cached lazyloaded" src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/aggregate-functions.png" data-src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/aggregate-functions.png" width="150" alt="MySQL Aggregate Functions">
+                        </a>
+                        <div class="layui-serachlist-text">
+                            <h3><a href="http://www.layui.com/admin/" target="_blank">MySQL聚合函数</a></h3>
+                            <p>如果您以前从未使用过MySQL，聚合函数允许您对一组记录执行计算并返回单个值。在本教程中，您将学习各种MySQL聚合函数，包括SUM、AVG、MAX、MIN和COUNT函数。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="http://www.layui.com/admin/" target="_blank" class="layui-serachlist-cover">
+                            <img class=" lazyloaded" src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/comparison-functions.png" data-src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/comparison-functions.png" width="150" alt="MySQL Comparison Functions">
+                        </a>
+                        <div class="layui-serachlist-text">
+                            <h3><a href="http://www.layui.com/admin/" target="_blank">MySQL比较函数</a></h3>
+                            <p>在本节中，您将了解MySQL中的比较函数，包括COALESCE、maximum、LEAST和ISNULL。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="http://www.layui.com/admin/" target="_blank" class="layui-serachlist-cover">
+                            <img class=" ls-is-cached lazyloaded" src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/control-flow-function.png" data-src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/control-flow-function.png" width="150" alt="MySQL Control Flow Functions and Expressions">
+                        </a>
+                        <div class="layui-serachlist-text">
+                            <h3><a href="#" target="_blank">MySQL控制流函数和表达式</a></h3>
+                            <p>控制流函数允许您向SQL查询添加if-then-else逻辑，而无需使用过程代码。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="http://www.layui.com/admin/" target="_blank" class="layui-serachlist-cover">
+                            <img class=" lazyloaded" src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/MySQL-Function.png" data-src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/MySQL-Function.png" width="150" alt="MySQL Date Functions">
+                        </a>
+                        <div class="layui-serachlist-text">
+                            <h3><a href="http://www.layui.com/admin/" target="_blank">MySQL日期函数</a></h3>
+                            <p>这个页面向您展示了最常用的MySQL日期函数，允许您有效地操作日期和时间数据。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="http://www.layui.com/admin/" target="_blank" class="layui-serachlist-cover">
+                            <img class=" lazyloaded" src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/string-functions.png" data-src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/string-functions.png" width="150" alt="MySQL String Functions">
+                        </a>
+                        <div class="layui-serachlist-text">
+                            <h3><a href="http://www.layui.com/admin/" target="_blank">MySQL字符串函数</a></h3>
+                            <p>这个页面向您展示了最常用的MySQL字符串函数，这些函数允许您有效地操作字符串数据。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="http://www.layui.com/admin/" target="_blank" class="layui-serachlist-cover">
+                            <img class=" lazyloaded" src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/window-functions.png" data-src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/window-functions.png" width="150" alt="MySQL Window Functions">
+                        </a>
+                        <div class="layui-serachlist-text">
+                            <h3><a href="http://www.layui.com/admin/" target="_blank">MySQL窗口功能</a></h3>
+                            <p>本教程向您介绍MySQL windows函数，并提供一些MySQL中windows函数的实用示例。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="http://www.layui.com/admin/" target="_blank" class="layui-serachlist-cover">
+                            <img class=" ls-is-cached lazyloaded" src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/math-functions.png" data-src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/math-functions.png" width="150" alt="MySQL Math Functions">
+                        </a>
+                        <div class="layui-serachlist-text">
+                            <h3><a href="http://www.layui.com/admin/" target="_blank">MySQL数学函数</a></h3>
+                            <p>本节介绍MySQL中最常用的数学函数。</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <h2>MySQL编程接口</h2>
+                <p>在本节中，我们将向您展示如何编写基于MySQL的应用程序来访问MySQL数据库。</p>
+                <ul class="layadmin-serach-list layui-text">
+                    <li>
+                        <a href="http://www.layui.com/admin/" target="_blank" class="layui-serachlist-cover">
+                            <img class=" ls-is-cached lazyloaded" src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/php.png" data-src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/php.png" width="150" alt="PHP MySQL Tutorial">
+                        </a>
+                        <div class="layui-serachlist-text">
+                            <h3><a href="http://www.layui.com/admin/" target="_blank">PHP MySQL教程</a></h3>
+                            <p>您将学习如何使用PHP数据对象或PDO与MySQL交互，PDO为访问MySQL数据库提供了轻量级和一致的接口。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="http://www.layui.com/admin/" target="_blank" class="layui-serachlist-cover">
+                            <img class=" ls-is-cached lazyloaded" src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/nodejs.png" data-src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/nodejs.png" width="150" alt="MySQL Node.js">
+                        </a>
+                        <div class="layui-serachlist-text">
+                            <h3><a href="http://www.layui.com/admin/" target="_blank">MySQL Node.js</a></h3>
+                            <p>在本节中，您将学习如何使用MySQL模块在node.js应用程序中与MySQL交互。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="http://www.layui.com/admin/" target="_blank" class="layui-serachlist-cover">
+                            <img class=" ls-is-cached lazyloaded" src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/java.png" data-src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/java.png" width="150" alt="MySQL JDBC Tutorial">
+                        </a>
+                        <div class="layui-serachlist-text">
+                            <h3><a href="#" target="_blank">MySQL JDBC教程</a></h3>
+                            <p>Java JDBC API提供了与任何关系数据库交互的标准接口。在本MySQL JDBC教程部分，我们将向您展示如何使用JDBC与MySQL数据库交互。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="http://www.layui.com/admin/" target="_blank" class="layui-serachlist-cover">
+                            <img class=" lazyloaded" src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/python.png" data-src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/python.png" width="150" alt="Python MySQL Tutorial">
+                        </a>
+                        <div class="layui-serachlist-text">
+                            <h3><a href="http://www.layui.com/admin/" target="_blank">Python MySQL教程</a></h3>
+                            <p>本Python MySQL教程向您展示了如何使用MySQL连接器/Python访问MySQL数据库。</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <h2>数据库管理员的MySQL教程</h2>
+                <p>这个分步教程提供了MySQL管理的深入背景信息。</p>
+                <p>我们涵盖了从基础到高级MySQL管理和配置的所有内容。本节介绍的所有MySQL管理教程都是实用的，在企业环境中广泛使用。</p>
+                <ul class="layadmin-serach-list layui-text">
+                    <li>
+                        <a href="http://www.layui.com/admin/" target="_blank" class="layui-serachlist-cover">
+                            <img class=" lazyloaded" src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/MySQL-Administration.png" data-src="http://www.mysqltutorial.org/wp-content/uploads/2019/09/MySQL-Administration.png" width="150" alt="MySQL Administration">
+                        </a>
+                        <div class="layui-serachlist-text">
+                            <h3><a href="http://www.layui.com/admin/" target="_blank">MySQL管理</a></h3>
+                            <p>在本节中，你会发现很多有用的MySQL管理教程，包括MySQL服务器的启动和关闭，MySQL服务器的安全，MySQL数据库的维护，备份和恢复。</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <h2>MySQL参考资料</h2>
+                <p>如果您需要更多关于MySQL的信息，请查看<a href="#">MySQL参考资料。</a></p>
+
+
+
+
+
+            </article>
+        </div>
+        <div class="layui-col-md3 right">
+            <div class="layui-card">
+                <div class="layui-card-header">MYSQL快速启动</div>
+                <div class="layui-card-body">
+                    <a href="#"><div>MySQL是什么?</div></a>
+                    <a href="#"><div>安装MySQL数据库服务器</div></a>
+                    <a href="#"><div>连接到MySQL服务器</div></a>
+                    <a href="#"><div>下载MySQL样本数据库</div></a>
+                    <a href="#"><div>加载示例数据库</div></a>
+                </div>
+            </div>
+
+            <div class="layui-card">
+                <div class="layui-card-header">MYSQL数据操作</div>
+                <div class="layui-card-body">
+                    <a href="#"><div>SELECT</div></a>
+                    <a href="#"><div>ORDER BY</div></a>
+                    <a href="#"><div>WHERE</div></a>
+                    <a href="#"><div>SELECT DISTINCT</div></a>
+                    <a href="#"><div>AND</div></a>
+                    <a href="#"><div>OR</div></a>
+                    <a href="#"><div>IN</div></a>
+                    <a href="#"><div>BETWEEN</div></a>
+                    <a href="#"><div>LIKE</div></a>
+                    <a href="#"><div>LIMIT</div></a>
+                    <a href="#"><div>IS NULL</div></a>
+                    <a href="#"><div>Table & Column Aliases</div></a>
+                    <a href="#"><div>Joins</div></a>
+                    <a href="#"><div>INNER JOIN</div></a>
+                    <a href="#"><div>LEFT JOIN</div></a>
+                    <a href="#"><div>RIGHT JOIN</div></a>
+                    <a href="#"><div>Self Join</div></a>
+                    <a href="#"><div>CROSS JOIN</div></a>
+                    <a href="#"><div>GROUP BY</div></a>
+                    <a href="#"><div>HAVING</div></a>
+                    <a href="#"><div>ROLLUP</div></a>
+                    <a href="#"><div>Subquery</div></a>
+                    <a href="#"><div>Derived Tables</div></a>
+                    <a href="#"><div>EXISTS</div></a>
+                    <a href="#"><div>UNION</div></a>
+                    <a href="#"><div>MINUS</div></a>
+                    <a href="#"><div>INTERSECT</div></a>
+                    <a href="#"><div>INSERT</div></a>
+                    <a href="#"><div>Insert Multiple Rows</div></a>
+                    <a href="#"><div>INSERT INTO SELECT</div></a>
+                    <a href="#"><div>Insert On Duplicate Key Update</div></a>
+                    <a href="#"><div>INSERT IGNORE</div></a>
+                    <a href="#"><div>UPDATE</div></a>
+                    <a href="#"><div>UPDATE JOIN</div></a>
+                    <a href="#"><div>DELETE</div></a>
+                    <a href="#"><div>DELETE JOIN</div></a>
+                    <a href="#"><div>ON DELETE CASCADE</div></a>
+                    <a href="#"><div>REPLACE</div></a>
+                </div>
+            </div>
+
+            <div class="layui-card">
+                <div class="layui-card-header">MYSQL数据定义</div>
+                <div class="layui-card-body">
+                 <a href="#"><div>Selecting Database</div></a>
+                 <a href="#"><div>CREATE DATABASE</div></a>
+                 <a href="#"><div>DROP DATABASE</div></a>
+                 <a href="#"><div>Managing Databases</div></a>
+                 <a href="#"><div>Storage Engines</div></a>
+                 <a href="#"><div>Data Types</div></a>
+                 <a href="#"><div>CREATE TABLE</div></a>
+                 <a href="#"><div>Primary Key</div></a>
+                 <a href="#"><div>Foreign Key</div></a>
+                 <a href="#"><div>UNIQUE Constraint</div></a>
+                 <a href="#"><div>CHECK Constraint</div></a>
+                 <a href="#"><div>NOT NULL</div></a>
+                 <a href="#"><div>Sequence</div></a>
+                 <a href="#"><div>ALTER TABLE</div></a>
+                 <a href="#"><div>ADD COLUMN</div></a>
+                 <a href="#"><div>DROP COLUMN</div></a>
+                 <a href="#"><div>RENAME TABLE</div></a>
+                 <a href="#"><div>DROP TABLE</div></a>
+                 <a href="#"><div>Temporary Tables</div></a>
+                 <a href="#"><div>TRUNCATE TABLE</div></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="./plugs/layui/layui.all.js"></script>
+<script>
+    var form = layui.form
+        ,layer = layui.layer;
+</script>
+</body>
+</html>
